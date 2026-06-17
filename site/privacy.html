@@ -89,11 +89,12 @@
 
         <h2>2. 软件在本机处理的数据</h2>
         <p>clean / files / merge 三个功能全部在你的设备本地完成；软件<strong>不会</strong>将你的文件内容上传到任何服务器。运行历史、预设、许可文件等都保存在你本机的 <code>~/.xlsx-organizer/</code> 目录下，由你掌控，可随时删除。</p>
+        <p>若你购买并安装 Pro 许可证，软件会读取本机一个稳定的机器标识符（在 Windows 上为系统的 MachineGuid），用于将许可证<strong>绑定</strong>到你的机器（"节点锁"）。软件只会保存并使用该标识符经加盐后的<strong>单向哈希</strong>（指纹）；原始标识符<strong>不会</strong>被存储或上传。该指纹仅用于离线校验本机是否在许可范围内。</p>
 
         <h2>3. 唯一的联网行为：检查更新</h2>
         <p>仅当你<strong>主动</strong>运行 <code>xlsx-organizer update check</code> 或在图形界面点击"检查更新"时，软件才会向 GitHub 发起一次请求，询问最新发布版本。该请求：</p>
         <ul>
-          <li>只发送你的软件版本号（作为 User-Agent，如 <code>xlsx-organizer/0.2.0</code>）；</li>
+          <li>只发送你的软件版本号（作为 User-Agent，如 <code>xlsx-organizer/0.2.1</code>）；</li>
           <li>与任何网络请求一样，目标服务器（GitHub）会看到你的 IP 地址；</li>
           <li><strong>不</strong>发送你的任何文件内容、文件名或个人信息。</li>
         </ul>
@@ -106,6 +107,7 @@
           <li>开具发票或收据；</li>
           <li>提供与购买相关的支持。</li>
         </ul>
+        <p>为实现机器绑定（节点锁），你在购买时还会通过 <code>xlsx-organizer license fingerprint</code> 提供每个席位对应机器的<strong>指纹哈希</strong>；该哈希会写入你的签名许可文件，作为该许可证可在哪些机器上生效的依据。更换硬件后请联系支持以重新签发。</p>
         <p>我们<strong>不</strong>出售这些信息，也不将其用于与上述无关的目的。</p>
 
         <h2>5. 保留与你的权利</h2>
@@ -131,11 +133,12 @@
 
         <h2>2. Data the software processes locally</h2>
         <p>The clean / files / merge features all run locally on your device; the software <strong>does not</strong> upload your file contents to any server. Run history, presets, and the license file are stored under <code>~/.xlsx-organizer/</code> on your own machine, under your control, and can be deleted at any time.</p>
+        <p>If you buy and install a Pro license, the software reads one stable machine identifier (on Windows, the system's MachineGuid) to <strong>bind</strong> the license to your machine (a "node-lock"). It stores and uses only a salted, <strong>one-way hash</strong> (a fingerprint) of that identifier; the raw identifier is <strong>not</strong> stored or transmitted. The fingerprint is used only to check, offline, whether this machine is covered by the license.</p>
 
         <h2>3. The only network activity: update check</h2>
         <p>Only when you <strong>explicitly</strong> run <code>xlsx-organizer update check</code> or click "Check for updates" in the GUI does the software make a single request to GitHub asking for the latest released version. That request:</p>
         <ul>
-          <li>sends only your software version (as a User-Agent, e.g. <code>xlsx-organizer/0.2.0</code>);</li>
+          <li>sends only your software version (as a User-Agent, e.g. <code>xlsx-organizer/0.2.1</code>);</li>
           <li>like any network request, lets the destination (GitHub) see your IP address;</li>
           <li><strong>does not</strong> send any of your file contents, file names, or personal information.</li>
         </ul>
@@ -148,6 +151,7 @@
           <li>provide invoices or receipts;</li>
           <li>provide purchase-related support.</li>
         </ul>
+        <p>To enable machine binding (node-lock), you also provide a <strong>fingerprint hash</strong> for each seat's machine via <code>xlsx-organizer license fingerprint</code>; that hash is written into your signed license file to record which machines the license is valid on. If your hardware changes, contact support for a re-issue.</p>
         <p>We <strong>do not</strong> sell this information or use it for unrelated purposes.</p>
 
         <h2>5. Retention &amp; your rights</h2>
@@ -184,7 +188,7 @@
         <a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer" data-i18n="footer.contact">联系</a>
       </nav>
     </div>
-    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.2.0</p>
+    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.2.1</p>
   </div>
 </footer>
 
