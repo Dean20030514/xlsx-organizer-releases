@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 / Privacy Policy — xlsx-organizer</title>
+<meta name="description" content="xlsx-organizer 隐私政策：离线运行，数据不出本机。Privacy policy for xlsx-organizer — offline by design, your data never leaves the machine.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232547D0'/%3E%3Cg fill='%23fff'%3E%3Crect x='5' y='6' width='14' height='2.2' rx='1'/%3E%3Crect x='5' y='10.9' width='14' height='2.2' rx='1'/%3E%3Crect x='5' y='15.8' width='9' height='2.2' rx='1'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+  :root{
+    --accent:#2547D0; --accent-dark:#1c37a6;
+    --ink:#111827; --muted:#5b6472; --faint:#9aa3b2;
+    --surface:#ffffff; --bg:#f8f9fb; --hairline:#e6e8ee; --hairline-strong:#d5d9e2;
+    --radius:12px; --radius-sm:8px; --maxw:760px;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--surface);line-height:1.7;
+    -webkit-font-smoothing:antialiased;font-size:16px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3{line-height:1.2;letter-spacing:-0.02em;margin:0}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);
+    backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--hairline)}
+  .nav-inner{display:flex;align-items:center;gap:16px;height:60px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);font-size:16px}
+  .brand:hover{text-decoration:none}
+  .brand svg{display:block;border-radius:6px}
+  .nav-right{margin-left:auto;display:flex;align-items:center;gap:14px}
+  .back{color:var(--muted);font-weight:500;font-size:14px}
+  .back:hover{color:var(--accent);text-decoration:none}
+  #langToggle{background:transparent;border:1px solid var(--hairline-strong);color:var(--muted);
+    font:inherit;font-weight:600;font-size:13px;padding:6px 11px;border-radius:999px;cursor:pointer;min-width:48px}
+  #langToggle:hover{border-color:var(--accent);color:var(--accent)}
+
+  main{padding:48px 0 32px}
+  .legal-title{font-size:clamp(26px,4vw,34px);font-weight:800}
+  .effective{margin-top:10px;color:var(--faint);font-size:13.5px;font-family:var(--mono)}
+  .lang-block{display:none}
+  .lang-block.active{display:block}
+  .legal-body h2{font-size:19px;font-weight:700;margin:34px 0 8px}
+  .legal-body p{margin:11px 0;color:var(--ink)}
+  .legal-body ul{margin:11px 0;padding-left:22px}
+  .legal-body li{margin:6px 0}
+  .legal-body strong{font-weight:700}
+  .note{background:var(--bg);border:1px solid var(--hairline);border-radius:10px;
+    padding:15px 18px;font-size:14.5px;color:var(--muted);margin:22px 0 4px}
+
+  footer.site{border-top:1px solid var(--hairline);padding:40px 0;background:var(--surface);margin-top:40px}
+  .foot-grid{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start;justify-content:space-between}
+  .foot-grid .brand{font-size:15px}
+  .foot-tag{color:var(--muted);font-size:13.5px;max-width:40ch;margin-top:9px}
+  .foot-links{display:flex;flex-wrap:wrap;gap:18px}
+  .foot-links a{color:var(--muted);font-weight:500;font-size:13.5px}
+  .foot-meta{margin-top:16px;color:var(--faint);font-size:12.5px;font-family:var(--mono)}
+</style>
+</head>
+<body>
+<a href="#main" class="sr-only">跳到主内容 / Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html" aria-label="xlsx-organizer">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#2547D0"/><g fill="#fff"><rect x="5" y="6" width="14" height="2.2" rx="1"/><rect x="5" y="10.9" width="14" height="2.2" rx="1"/><rect x="5" y="15.8" width="9" height="2.2" rx="1"/></g></svg>
+      xlsx-organizer
+    </a>
+    <div class="nav-right">
+      <a class="back" href="index.html" data-i18n="nav.back">← 返回首页</a>
+      <button id="langToggle" type="button" aria-label="Switch to English">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <!-- zh -->
+    <div class="lang-block active" data-lang="zh">
+      <h1 class="legal-title">隐私政策</h1>
+      <p class="effective">生效日期：2026-06-13</p>
+      <div class="legal-body">
+        <h2>1. 概述</h2>
+        <p>xlsx-organizer 是一款离线工具。在设计上，<strong>你的电子表格数据不会离开你的设备</strong>。本政策说明软件如何处理数据，以及在你购买 Pro 时我们会收集什么信息。</p>
+
+        <h2>2. 软件在本机处理的数据</h2>
+        <p>clean / files / merge 三个功能全部在你的设备本地完成；软件<strong>不会</strong>将你的文件内容上传到任何服务器。运行历史、预设、许可文件等都保存在你本机的 <code>~/.xlsx-organizer/</code> 目录下，由你掌控，可随时删除。</p>
+
+        <h2>3. 唯一的联网行为：检查更新</h2>
+        <p>仅当你<strong>主动</strong>运行 <code>xlsx-organizer update check</code> 或在图形界面点击"检查更新"时，软件才会向 GitHub 发起一次请求，询问最新发布版本。该请求：</p>
+        <ul>
+          <li>只发送你的软件版本号（作为 User-Agent，如 <code>xlsx-organizer/0.2.0</code>）；</li>
+          <li>与任何网络请求一样，目标服务器（GitHub）会看到你的 IP 地址；</li>
+          <li><strong>不</strong>发送你的任何文件内容、文件名或个人信息。</li>
+        </ul>
+        <p>软件没有任何自动或后台联网、没有遥测、没有使用统计、没有广告或第三方跟踪。</p>
+
+        <h2>4. 购买 Pro 时收集的信息</h2>
+        <p>为签发 Pro 许可文件，我们会收集你提供的<strong>姓名</strong>和<strong>邮箱</strong>（以及席位数）。这些信息会写入你的签名许可文件，并由许可方保留，仅用于：</p>
+        <ul>
+          <li>签发与（必要时）重发你的许可文件；</li>
+          <li>开具发票或收据；</li>
+          <li>提供与购买相关的支持。</li>
+        </ul>
+        <p>我们<strong>不</strong>出售这些信息，也不将其用于与上述无关的目的。</p>
+
+        <h2>5. 保留与你的权利</h2>
+        <p>购买相关信息保留至履行支持、开票与法律义务所需的期限。你可通过联系邮箱要求查询、更正或删除你的购买信息。</p>
+
+        <h2>6. 本网站</h2>
+        <p>本营销网站为静态页面，不设置跟踪 Cookie，也不嵌入第三方分析或字体。你的语言偏好仅以浏览器本地存储（localStorage）保存在你自己的设备上。</p>
+
+        <h2>7. 联系方式</h2>
+        <p>隐私相关事宜请联系 <a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer%20Privacy">deanymrq@gmail.com</a>。</p>
+
+        <p class="note">本文档为通用模板，不构成法律意见。正式商用前建议由你或专业律师审阅并按你的实际主体与司法管辖情况调整。</p>
+      </div>
+    </div>
+
+    <!-- en -->
+    <div class="lang-block" data-lang="en">
+      <h1 class="legal-title">Privacy Policy</h1>
+      <p class="effective">Effective date: 2026-06-13</p>
+      <div class="legal-body">
+        <h2>1. Overview</h2>
+        <p>xlsx-organizer is an offline tool. By design, <strong>your spreadsheet data never leaves your device</strong>. This policy explains how the software handles data and what we collect when you buy Pro.</p>
+
+        <h2>2. Data the software processes locally</h2>
+        <p>The clean / files / merge features all run locally on your device; the software <strong>does not</strong> upload your file contents to any server. Run history, presets, and the license file are stored under <code>~/.xlsx-organizer/</code> on your own machine, under your control, and can be deleted at any time.</p>
+
+        <h2>3. The only network activity: update check</h2>
+        <p>Only when you <strong>explicitly</strong> run <code>xlsx-organizer update check</code> or click "Check for updates" in the GUI does the software make a single request to GitHub asking for the latest released version. That request:</p>
+        <ul>
+          <li>sends only your software version (as a User-Agent, e.g. <code>xlsx-organizer/0.2.0</code>);</li>
+          <li>like any network request, lets the destination (GitHub) see your IP address;</li>
+          <li><strong>does not</strong> send any of your file contents, file names, or personal information.</li>
+        </ul>
+        <p>There is no automatic or background networking, no telemetry, no usage analytics, and no ads or third-party tracking.</p>
+
+        <h2>4. Information collected when you buy Pro</h2>
+        <p>To issue a Pro license file, we collect the <strong>name</strong> and <strong>email</strong> you provide (and a seat count). This information is written into your signed license file and retained by the Licensor solely to:</p>
+        <ul>
+          <li>issue and, if needed, re-issue your license file;</li>
+          <li>provide invoices or receipts;</li>
+          <li>provide purchase-related support.</li>
+        </ul>
+        <p>We <strong>do not</strong> sell this information or use it for unrelated purposes.</p>
+
+        <h2>5. Retention &amp; your rights</h2>
+        <p>Purchase information is retained for as long as needed to meet support, invoicing, and legal obligations. You may request access to, correction of, or deletion of your purchase information via the contact email.</p>
+
+        <h2>6. This website</h2>
+        <p>This marketing site is a static page. It sets no tracking cookies and embeds no third-party analytics or fonts. Your language preference is stored only in your browser's localStorage, on your own device.</p>
+
+        <h2>7. Contact</h2>
+        <p>For privacy matters, contact <a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer%20Privacy">deanymrq@gmail.com</a>.</p>
+
+        <p class="note">This document is a generic template and does not constitute legal advice. Before relying on it commercially, have it reviewed by you or a qualified lawyer and adapted to your actual entity and jurisdiction.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="brand">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#2547D0"/><g fill="#fff"><rect x="5" y="6" width="14" height="2.2" rx="1"/><rect x="5" y="10.9" width="14" height="2.2" rx="1"/><rect x="5" y="15.8" width="9" height="2.2" rx="1"/></g></svg>
+          xlsx-organizer
+        </span>
+        <p class="foot-tag" data-i18n="footer.tagline">离线 Excel 批处理工具，为中小团队的财务 / 行政 / 运营。</p>
+      </div>
+      <nav class="foot-links" aria-label="页脚链接 / Footer">
+        <a href="eula.html" data-i18n="footer.eula">许可协议</a>
+        <a href="privacy.html" data-i18n="footer.privacy">隐私政策</a>
+        <a href="refund.html" data-i18n="footer.refund">退款政策</a>
+        <a href="support.html" data-i18n="footer.support">支持与开票</a>
+        <a href="https://github.com/Dean20030514/xlsx-organizer-releases/releases/latest" data-i18n="footer.releases">发布</a>
+        <a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer" data-i18n="footer.contact">联系</a>
+      </nav>
+    </div>
+    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.2.0</p>
+  </div>
+</footer>
+
+<script type="application/json" id="i18n">
+{
+  "zh": {
+    "nav.back": "← 返回首页",
+    "footer.tagline": "离线 Excel 批处理工具，为中小团队的财务 / 行政 / 运营。",
+    "footer.eula": "许可协议",
+    "footer.privacy": "隐私政策",
+    "footer.refund": "退款政策",
+    "footer.support": "支持与开票",
+    "footer.releases": "发布",
+    "footer.contact": "联系",
+    "footer.copyright": "© 2026 xlsx-organizer"
+  },
+  "en": {
+    "nav.back": "← Back to home",
+    "footer.tagline": "Offline Excel batch tool for SMB finance / admin / ops teams.",
+    "footer.eula": "License",
+    "footer.privacy": "Privacy",
+    "footer.refund": "Refunds",
+    "footer.support": "Support & invoicing",
+    "footer.releases": "Releases",
+    "footer.contact": "Contact",
+    "footer.copyright": "© 2026 xlsx-organizer"
+  }
+}
+</script>
+<script>
+  (function () {
+    "use strict";
+    var STORAGE_KEY = "xlsxorg-lang";
+    var island = document.getElementById("i18n");
+    var I18N = island ? JSON.parse(island.textContent) : { zh: {}, en: {} };
+    var nodes = document.querySelectorAll("[data-i18n]");
+    var blocks = document.querySelectorAll(".lang-block");
+    var toggle = document.getElementById("langToggle");
+    var current = "zh";
+
+    function applyLang(lang) {
+      var dict = I18N[lang] || I18N.zh || {};
+      nodes.forEach(function (el) {
+        var key = el.getAttribute("data-i18n");
+        if (Object.prototype.hasOwnProperty.call(dict, key)) {
+          el.textContent = dict[key];
+        }
+      });
+      blocks.forEach(function (b) {
+        b.classList.toggle("active", b.getAttribute("data-lang") === lang);
+      });
+      document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+      toggle.textContent = lang === "zh" ? "EN" : "中文";
+      toggle.setAttribute("aria-label", lang === "zh" ? "Switch to English" : "切换到中文");
+      current = lang;
+      try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+    }
+
+    var initial = "zh";
+    try {
+      var saved = localStorage.getItem(STORAGE_KEY);
+      if (saved === "zh" || saved === "en") { initial = saved; }
+    } catch (e) {}
+    applyLang(initial);
+
+    toggle.addEventListener("click", function () {
+      applyLang(current === "zh" ? "en" : "zh");
+    });
+  })();
+</script>
+</body>
+</html>

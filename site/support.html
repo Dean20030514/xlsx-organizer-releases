@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>支持与开票 / Support & Invoicing — xlsx-organizer</title>
+<meta name="description" content="xlsx-organizer 支持渠道与开票说明。Support channels and invoicing for xlsx-organizer.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232547D0'/%3E%3Cg fill='%23fff'%3E%3Crect x='5' y='6' width='14' height='2.2' rx='1'/%3E%3Crect x='5' y='10.9' width='14' height='2.2' rx='1'/%3E%3Crect x='5' y='15.8' width='9' height='2.2' rx='1'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+  :root{
+    --accent:#2547D0; --accent-dark:#1c37a6;
+    --ink:#111827; --muted:#5b6472; --faint:#9aa3b2;
+    --surface:#ffffff; --bg:#f8f9fb; --hairline:#e6e8ee; --hairline-strong:#d5d9e2;
+    --radius:12px; --radius-sm:8px; --maxw:760px;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--surface);line-height:1.7;
+    -webkit-font-smoothing:antialiased;font-size:16px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3{line-height:1.2;letter-spacing:-0.02em;margin:0}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);
+    backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--hairline)}
+  .nav-inner{display:flex;align-items:center;gap:16px;height:60px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);font-size:16px}
+  .brand:hover{text-decoration:none}
+  .brand svg{display:block;border-radius:6px}
+  .nav-right{margin-left:auto;display:flex;align-items:center;gap:14px}
+  .back{color:var(--muted);font-weight:500;font-size:14px}
+  .back:hover{color:var(--accent);text-decoration:none}
+  #langToggle{background:transparent;border:1px solid var(--hairline-strong);color:var(--muted);
+    font:inherit;font-weight:600;font-size:13px;padding:6px 11px;border-radius:999px;cursor:pointer;min-width:48px}
+  #langToggle:hover{border-color:var(--accent);color:var(--accent)}
+
+  main{padding:48px 0 32px}
+  .legal-title{font-size:clamp(26px,4vw,34px);font-weight:800}
+  .effective{margin-top:10px;color:var(--faint);font-size:13.5px;font-family:var(--mono)}
+  .lang-block{display:none}
+  .lang-block.active{display:block}
+  .legal-body h2{font-size:19px;font-weight:700;margin:34px 0 8px}
+  .legal-body p{margin:11px 0;color:var(--ink)}
+  .legal-body ul{margin:11px 0;padding-left:22px}
+  .legal-body li{margin:6px 0}
+  .legal-body strong{font-weight:700}
+  .note{background:var(--bg);border:1px solid var(--hairline);border-radius:10px;
+    padding:15px 18px;font-size:14.5px;color:var(--muted);margin:22px 0 4px}
+
+  footer.site{border-top:1px solid var(--hairline);padding:40px 0;background:var(--surface);margin-top:40px}
+  .foot-grid{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start;justify-content:space-between}
+  .foot-grid .brand{font-size:15px}
+  .foot-tag{color:var(--muted);font-size:13.5px;max-width:40ch;margin-top:9px}
+  .foot-links{display:flex;flex-wrap:wrap;gap:18px}
+  .foot-links a{color:var(--muted);font-weight:500;font-size:13.5px}
+  .foot-meta{margin-top:16px;color:var(--faint);font-size:12.5px;font-family:var(--mono)}
+</style>
+</head>
+<body>
+<a href="#main" class="sr-only">跳到主内容 / Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html" aria-label="xlsx-organizer">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#2547D0"/><g fill="#fff"><rect x="5" y="6" width="14" height="2.2" rx="1"/><rect x="5" y="10.9" width="14" height="2.2" rx="1"/><rect x="5" y="15.8" width="9" height="2.2" rx="1"/></g></svg>
+      xlsx-organizer
+    </a>
+    <div class="nav-right">
+      <a class="back" href="index.html" data-i18n="nav.back">← 返回首页</a>
+      <button id="langToggle" type="button" aria-label="Switch to English">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <!-- zh -->
+    <div class="lang-block active" data-lang="zh">
+      <h1 class="legal-title">支持与开票</h1>
+      <p class="effective">生效日期：2026-06-13</p>
+      <div class="legal-body">
+        <h2>1. 支持渠道</h2>
+        <p>所有支持通过邮箱 <a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer%20Support">deanymrq@gmail.com</a> 提供。我们会尽力在<strong>数个工作日内</strong>回复（非 7×24 即时支持承诺）。</p>
+
+        <h2>2. 支持范围</h2>
+        <ul>
+          <li>安装与运行问题（含免安装 exe 与安装包）；</li>
+          <li>Pro 许可的安装与激活；</li>
+          <li>功能使用咨询（clean / files / merge、预设、历史等）；</li>
+          <li>缺陷反馈与改进建议。</li>
+        </ul>
+
+        <h2>3. 提交问题时请附上</h2>
+        <ul>
+          <li>软件版本（运行 <code>xlsx-organizer --version</code>）；</li>
+          <li>操作系统及版本；</li>
+          <li>复现步骤与期望结果；</li>
+          <li>相关的报告或日志——<strong>请勿包含敏感数据</strong>。</li>
+        </ul>
+
+        <h2>4. 缺陷修复与更新</h2>
+        <p>更新通过 GitHub 发布页分发。运行 <code>xlsx-organizer update check</code> 或在界面点击"检查更新"可查看是否有新版本；下载后请用 <code>SHA256SUMS.txt</code> 校验文件完整性。</p>
+
+        <h2>5. 开票</h2>
+        <p>Pro 购买可应要求开具发票或收据。请在购买后发送邮件至支持邮箱，注明<strong>发票抬头</strong>，以及（如需）税号与开票类型。我们会在确认付款后开具。</p>
+
+        <h2>6. 联系方式</h2>
+        <p><a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer%20Support">deanymrq@gmail.com</a></p>
+
+        <p class="note">本文档为通用说明，不构成法律意见。响应时效、开票类型等可按你的实际经营与税务情况调整。</p>
+      </div>
+    </div>
+
+    <!-- en -->
+    <div class="lang-block" data-lang="en">
+      <h1 class="legal-title">Support &amp; Invoicing</h1>
+      <p class="effective">Effective date: 2026-06-13</p>
+      <div class="legal-body">
+        <h2>1. Support channel</h2>
+        <p>All support is provided by email at <a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer%20Support">deanymrq@gmail.com</a>. We aim to reply <strong>within a few business days</strong> (this is not a 24/7 instant-support guarantee).</p>
+
+        <h2>2. What support covers</h2>
+        <ul>
+          <li>installation and run issues (standalone exe and installer);</li>
+          <li>installing and activating a Pro license;</li>
+          <li>how-to questions (clean / files / merge, presets, history, etc.);</li>
+          <li>bug reports and improvement suggestions.</li>
+        </ul>
+
+        <h2>3. When reporting an issue, please include</h2>
+        <ul>
+          <li>the software version (run <code>xlsx-organizer --version</code>);</li>
+          <li>your operating system and version;</li>
+          <li>steps to reproduce and the expected result;</li>
+          <li>the relevant report or log — <strong>without any sensitive data</strong>.</li>
+        </ul>
+
+        <h2>4. Fixes &amp; updates</h2>
+        <p>Updates are distributed via the GitHub releases page. Run <code>xlsx-organizer update check</code> or click "Check for updates" in the GUI to see whether a newer version exists; after downloading, verify integrity against <code>SHA256SUMS.txt</code>.</p>
+
+        <h2>5. Invoicing</h2>
+        <p>Invoices or receipts for a Pro purchase are available on request. After purchase, email the support address with the <strong>invoice title/payee</strong> and, if required, a tax number and invoice type. We issue it once payment is confirmed.</p>
+
+        <h2>6. Contact</h2>
+        <p><a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer%20Support">deanymrq@gmail.com</a></p>
+
+        <p class="note">This document is general guidance and does not constitute legal advice. Response times and invoice types can be adapted to your actual business and tax situation.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="brand">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#2547D0"/><g fill="#fff"><rect x="5" y="6" width="14" height="2.2" rx="1"/><rect x="5" y="10.9" width="14" height="2.2" rx="1"/><rect x="5" y="15.8" width="9" height="2.2" rx="1"/></g></svg>
+          xlsx-organizer
+        </span>
+        <p class="foot-tag" data-i18n="footer.tagline">离线 Excel 批处理工具，为中小团队的财务 / 行政 / 运营。</p>
+      </div>
+      <nav class="foot-links" aria-label="页脚链接 / Footer">
+        <a href="eula.html" data-i18n="footer.eula">许可协议</a>
+        <a href="privacy.html" data-i18n="footer.privacy">隐私政策</a>
+        <a href="refund.html" data-i18n="footer.refund">退款政策</a>
+        <a href="support.html" data-i18n="footer.support">支持与开票</a>
+        <a href="https://github.com/Dean20030514/xlsx-organizer-releases/releases/latest" data-i18n="footer.releases">发布</a>
+        <a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer" data-i18n="footer.contact">联系</a>
+      </nav>
+    </div>
+    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.2.0</p>
+  </div>
+</footer>
+
+<script type="application/json" id="i18n">
+{
+  "zh": {
+    "nav.back": "← 返回首页",
+    "footer.tagline": "离线 Excel 批处理工具，为中小团队的财务 / 行政 / 运营。",
+    "footer.eula": "许可协议",
+    "footer.privacy": "隐私政策",
+    "footer.refund": "退款政策",
+    "footer.support": "支持与开票",
+    "footer.releases": "发布",
+    "footer.contact": "联系",
+    "footer.copyright": "© 2026 xlsx-organizer"
+  },
+  "en": {
+    "nav.back": "← Back to home",
+    "footer.tagline": "Offline Excel batch tool for SMB finance / admin / ops teams.",
+    "footer.eula": "License",
+    "footer.privacy": "Privacy",
+    "footer.refund": "Refunds",
+    "footer.support": "Support & invoicing",
+    "footer.releases": "Releases",
+    "footer.contact": "Contact",
+    "footer.copyright": "© 2026 xlsx-organizer"
+  }
+}
+</script>
+<script>
+  (function () {
+    "use strict";
+    var STORAGE_KEY = "xlsxorg-lang";
+    var island = document.getElementById("i18n");
+    var I18N = island ? JSON.parse(island.textContent) : { zh: {}, en: {} };
+    var nodes = document.querySelectorAll("[data-i18n]");
+    var blocks = document.querySelectorAll(".lang-block");
+    var toggle = document.getElementById("langToggle");
+    var current = "zh";
+
+    function applyLang(lang) {
+      var dict = I18N[lang] || I18N.zh || {};
+      nodes.forEach(function (el) {
+        var key = el.getAttribute("data-i18n");
+        if (Object.prototype.hasOwnProperty.call(dict, key)) {
+          el.textContent = dict[key];
+        }
+      });
+      blocks.forEach(function (b) {
+        b.classList.toggle("active", b.getAttribute("data-lang") === lang);
+      });
+      document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+      toggle.textContent = lang === "zh" ? "EN" : "中文";
+      toggle.setAttribute("aria-label", lang === "zh" ? "Switch to English" : "切换到中文");
+      current = lang;
+      try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+    }
+
+    var initial = "zh";
+    try {
+      var saved = localStorage.getItem(STORAGE_KEY);
+      if (saved === "zh" || saved === "en") { initial = saved; }
+    } catch (e) {}
+    applyLang(initial);
+
+    toggle.addEventListener("click", function () {
+      applyLang(current === "zh" ? "en" : "zh");
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+# GitHub Pages deployment workflow for the xlsx-organizer marketing site.
+#
+# This file is a TEMPLATE kept in the (private) source repo under packaging/ so
+# it does NOT run here. To use it, copy it into the PUBLIC releases repo
+# (Dean20030514/xlsx-organizer-releases) at:
+#
+#     .github/workflows/pages.yml
+#
+# alongside a top-level `site/` folder copied from this repo's `site/`.
+# Then enable Pages in that repo: Settings -> Pages -> Build and deployment ->
+# Source: "GitHub Actions". See docs/DEPLOY.md for the full runbook.
+#
+# It publishes the static `site/` directory as-is (single self-contained HTML
+# pages, no build step). Adjust the branch name below if the releases repo's
+# default branch is not `main`.
+
+name: Deploy site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+# Least-privilege token scopes required by the Pages deploy actions.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Serialize deploys; a newer push supersedes an in-flight one.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # The static site lives in the repo's top-level `site/` folder.
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
