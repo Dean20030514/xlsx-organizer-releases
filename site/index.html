@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>xlsx-organizer — 离线 Excel 批处理工具 / Offline Excel batch tool</title>
-<meta name="description" content="离线、跨平台的 Excel 批量清洗·整理·合并工具，数据不出本机。Offline, cross-platform tool to clean, organize and merge Excel exports — your data never leaves the machine.">
+<meta name="description" content="离线、跨平台的 Excel 批量清洗·整理·合并·校验·报表工具，数据不出本机。Offline, cross-platform tool to clean, organize, merge, validate and report on Excel exports — your data never leaves the machine.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232547D0'/%3E%3Cg fill='%23fff'%3E%3Crect x='5' y='6' width='14' height='2.2' rx='1'/%3E%3Crect x='5' y='10.9' width='14' height='2.2' rx='1'/%3E%3Crect x='5' y='15.8' width='9' height='2.2' rx='1'/%3E%3C/g%3E%3C/svg%3E">
 <style>
   :root{
@@ -88,7 +88,7 @@
   .trust-row span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
 
   /* capabilities */
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
   .card{border:1px solid var(--hairline);border-radius:var(--radius);padding:26px 24px;background:var(--surface);
     transition:border-color .15s,transform .15s}
   .card:hover{border-color:var(--hairline-strong);transform:translateY(-2px)}
@@ -153,12 +153,18 @@
   .foot-links a{color:var(--muted);font-weight:500;font-size:14px}
   .foot-meta{margin-top:18px;color:var(--faint);font-size:13px;font-family:var(--mono)}
 
+  @media (max-width:1100px){
+    .cards{grid-template-columns:repeat(2,1fr)}
+  }
   @media (max-width:860px){
     .hero-grid{grid-template-columns:1fr;gap:40px}
-    .cards,.dl-cards{grid-template-columns:1fr}
+    .dl-cards{grid-template-columns:1fr}
     .safe-grid{grid-template-columns:1fr}
     .nav-links{display:none}
     section{padding:64px 0}
+  }
+  @media (max-width:640px){
+    .cards{grid-template-columns:1fr}
   }
   @media (max-width:420px){
     .wrap{padding:0 18px}
@@ -196,7 +202,7 @@
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow" data-i18n="hero.eyebrow">离线 Excel 批处理</span>
-      <h1 id="hero-title" data-i18n="hero.title">把 ERP / 财务 / 电商导出的 Excel，一键批量清洗、整理、合并</h1>
+      <h1 id="hero-title" data-i18n="hero.title">把 ERP / 财务 / 电商导出的 Excel，一键批量清洗、整理、合并、校验、出报表</h1>
       <p class="sub" data-i18n="hero.sub">100% 离线，数据不出本机；可审计报告；中英双语；免安装 exe，双击即用。</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#download" data-i18n="hero.cta_primary">免费下载</a>
@@ -233,7 +239,7 @@
 <section id="capabilities" aria-labelledby="cap-head">
   <div class="wrap">
     <div class="section-head">
-      <h2 id="cap-head" data-i18n="cap.heading">三个一起干活的子命令</h2>
+      <h2 id="cap-head" data-i18n="cap.heading">八个一起干活的子命令</h2>
       <p data-i18n="cap.sub">共享同一套配置与日志机制。</p>
     </div>
     <div class="cards">
@@ -250,7 +256,32 @@
       <div class="card">
         <span class="tag">merge</span>
         <h3 data-i18n="cap.merge_title">合并工作簿</h3>
-        <p data-i18n="cap.merge_desc">把目录下所有导出合并成一个新工作簿：append 按表头并集对齐，或 sheets 每文件一个工作表。输出从不覆盖已有文件。</p>
+        <p data-i18n="cap.merge_desc">把目录下所有导出合并成一个新工作簿：append 按表头并集对齐，sheets 每文件一个工作表，join 按关键列跨表连接。输出从不覆盖已有文件。</p>
+      </div>
+      <div class="card">
+        <span class="tag">validate</span>
+        <h3 data-i18n="cap.validate_title">校验数据</h3>
+        <p data-i18n="cap.validate_desc">按声明式规则校验与对账：必填列 / 唯一键 / 非负 / 总计核对，加正则、数值范围、允许值、日期、列间比较；支持跨文件一致性与外键核对，问题可导出成待办工作簿逐条处理。</p>
+      </div>
+      <div class="card">
+        <span class="tag">report</span>
+        <h3 data-i18n="cap.report_title">汇总报表</h3>
+        <p data-i18n="cap.report_desc">把多个导出聚合成汇总报表：多级分组、交叉透视、小计与总计，十种聚合函数（求和 / 计数 / 均值等）；跨文件出一份总表，或逐文件各出一份。</p>
+      </div>
+      <div class="card">
+        <span class="tag">compare</span>
+        <h3 data-i18n="cap.compare_title">对比两期</h3>
+        <p data-i18n="cap.compare_desc">按关键列对比两个工作簿或两期数据，输出新增 / 删除 / 变更三张结果表——变更逐单元格列出旧值与新值；数值可设容差。</p>
+      </div>
+      <div class="card">
+        <span class="tag">split</span>
+        <h3 data-i18n="cap.split_title">拆分工作簿</h3>
+        <p data-i18n="cap.split_desc">把一个工作簿拆成多个文件：按列值分组、按固定行数分块、或每个工作表一个文件。输出从不覆盖已有文件。</p>
+      </div>
+      <div class="card">
+        <span class="tag">profile</span>
+        <h3 data-i18n="cap.profile_title">数据画像</h3>
+        <p data-i18n="cap.profile_desc">只读摸底新导出：每列一行，给出推断类型、缺失数与占比、去重值数、最小 / 最大 / 均值和示例值——写清洗或校验规则之前，先看清数据长什么样。</p>
       </div>
     </div>
   </div>
@@ -302,7 +333,7 @@
         </thead>
         <tbody>
           <tr>
-            <td data-i18n="pricing.row_features">全部功能（clean / files / merge / 报告 / 预设 / 历史）</td>
+            <td data-i18n="pricing.row_features">全部八管道（清洗 / 整理 / 合并 / 校验 / 报表 / 对比 / 拆分 / 画像）+ 预设 / 配方 / 历史</td>
             <td class="col"><span class="yes">&#10003;</span></td>
             <td class="col pro"><span class="yes">&#10003;</span></td>
           </tr>
@@ -434,7 +465,7 @@
     "nav.download": "下载",
     "nav.cta_download": "免费下载",
     "hero.eyebrow": "离线 Excel 批处理",
-    "hero.title": "把 ERP / 财务 / 电商导出的 Excel，一键批量清洗、整理、合并",
+    "hero.title": "把 ERP / 财务 / 电商导出的 Excel，一键批量清洗、整理、合并、校验、出报表",
     "hero.sub": "100% 离线，数据不出本机；可审计报告；中英双语；免安装 exe，双击即用。",
     "hero.cta_primary": "免费下载",
     "hero.cta_secondary": "了解 Pro",
@@ -445,14 +476,24 @@
     "trust.readonly": "输入只读不损坏",
     "trust.bilingual": "中英双语",
     "trust.cross": "跨平台",
-    "cap.heading": "三个一起干活的子命令",
+    "cap.heading": "八个一起干活的子命令",
     "cap.sub": "共享同一套配置与日志机制。",
     "cap.clean_title": "清洗数据",
     "cap.clean_desc": "在工作簿内部清理：去空行空列、去首尾空格、规范表头、按列去重、排序、按列拆分。输出到独立目录，原文件从不改动。",
     "cap.files_title": "整理文件",
     "cap.files_desc": "按文件名正则 / 修改日期 / 内容标记列分类到子文件夹；用模板批量改名（冲突自动加序号）；按内容哈希去重——重复文件移动到 duplicates/，从不删除。",
     "cap.merge_title": "合并工作簿",
-    "cap.merge_desc": "把目录下所有导出合并成一个新工作簿：append 按表头并集对齐，或 sheets 每文件一个工作表。输出从不覆盖已有文件。",
+    "cap.merge_desc": "把目录下所有导出合并成一个新工作簿：append 按表头并集对齐，sheets 每文件一个工作表，join 按关键列跨表连接。输出从不覆盖已有文件。",
+    "cap.validate_title": "校验数据",
+    "cap.validate_desc": "按声明式规则校验与对账：必填列 / 唯一键 / 非负 / 总计核对，加正则、数值范围、允许值、日期、列间比较；支持跨文件一致性与外键核对，问题可导出成待办工作簿逐条处理。",
+    "cap.report_title": "汇总报表",
+    "cap.report_desc": "把多个导出聚合成汇总报表：多级分组、交叉透视、小计与总计，十种聚合函数（求和 / 计数 / 均值等）；跨文件出一份总表，或逐文件各出一份。",
+    "cap.compare_title": "对比两期",
+    "cap.compare_desc": "按关键列对比两个工作簿或两期数据，输出新增 / 删除 / 变更三张结果表——变更逐单元格列出旧值与新值；数值可设容差。",
+    "cap.split_title": "拆分工作簿",
+    "cap.split_desc": "把一个工作簿拆成多个文件：按列值分组、按固定行数分块、或每个工作表一个文件。输出从不覆盖已有文件。",
+    "cap.profile_title": "数据画像",
+    "cap.profile_desc": "只读摸底新导出：每列一行，给出推断类型、缺失数与占比、去重值数、最小 / 最大 / 均值和示例值——写清洗或校验规则之前，先看清数据长什么样。",
     "safe.heading": "默认安全，逐步可控",
     "safe.sub": "破坏性操作前先预览，再确认。",
     "safe.dryrun_title": "默认 dry-run",
@@ -468,7 +509,7 @@
     "pricing.col_feature": "能力",
     "pricing.col_free": "免费版",
     "pricing.col_pro": "Pro",
-    "pricing.row_features": "全部功能（clean / files / merge / 报告 / 预设 / 历史）",
+    "pricing.row_features": "全部八管道（清洗 / 整理 / 合并 / 校验 / 报表 / 对比 / 拆分 / 画像）+ 预设 / 配方 / 历史",
     "pricing.row_offline": "100% 离线，数据不出本机",
     "pricing.row_limit": "每次运行文件上限",
     "pricing.limit_free": "最多 20 个",
@@ -521,7 +562,7 @@
     "nav.download": "Download",
     "nav.cta_download": "Download free",
     "hero.eyebrow": "Offline Excel batch tool",
-    "hero.title": "Clean, organize, and merge raw ERP / finance / e-commerce Excel exports — in one batch",
+    "hero.title": "Clean, organize, merge, validate, and report on raw ERP / finance / e-commerce Excel exports — in one batch",
     "hero.sub": "100% offline — your spreadsheets never leave the machine. Auditable reports, bilingual, a double-click exe with no install.",
     "hero.cta_primary": "Download free",
     "hero.cta_secondary": "See Pro",
@@ -532,14 +573,24 @@
     "trust.readonly": "Inputs read-only",
     "trust.bilingual": "Bilingual zh / en",
     "trust.cross": "Cross-platform",
-    "cap.heading": "Three subcommands, one tool",
+    "cap.heading": "Eight subcommands, one tool",
     "cap.sub": "Sharing one config and logging mechanism.",
     "cap.clean_title": "Clean data",
     "cap.clean_desc": "Tidy data inside workbooks: drop empty rows/columns, trim cells, normalize headers, de-duplicate by columns, sort, split by column. Output goes to a separate folder; originals are never touched.",
     "cap.files_title": "Organize files",
     "cap.files_desc": "Classify into subfolders by filename regex / modified date / a content marker column; batch-rename via templates (collision-safe); content-hash dedup that moves duplicates to duplicates/ — never deletes.",
     "cap.merge_title": "Merge workbooks",
-    "cap.merge_desc": "Combine every export in a folder into one new workbook: append (aligned by the union of headers) or sheets (one sheet per file). Output never overwrites.",
+    "cap.merge_desc": "Combine every export in a folder into one new workbook: append (aligned by the union of headers), sheets (one sheet per file), or join on key columns across tables. Output never overwrites.",
+    "cap.validate_title": "Validate data",
+    "cap.validate_desc": "Check exports against declarative rules — required columns, unique keys, non-negatives, totals, plus patterns, ranges, allowed values, dates and cross-column comparisons; cross-file consistency and foreign-key checks included. Export findings as a to-do workbook.",
+    "cap.report_title": "Summary reports",
+    "cap.report_desc": "Aggregate raw exports into a summary report: multi-level group-by, cross-tab pivots, subtotals and grand totals with ten aggregation functions — one cross-file report, or one per source file.",
+    "cap.compare_title": "Compare periods",
+    "cap.compare_desc": "Diff two workbooks or periods by key columns into added / removed / changed sheets — every changed cell listed with its old and new value; optional numeric tolerance.",
+    "cap.split_title": "Split workbooks",
+    "cap.split_desc": "Split one workbook into many files: by key-column value, into fixed-size row chunks, or one file per sheet. Output never overwrites.",
+    "cap.profile_title": "Profile data",
+    "cap.profile_desc": "Read-only profiling of a fresh export: one row per column with inferred type, missing count and share, distinct values, min / max / mean and sample values — see what the data looks like before writing clean or validate rules.",
     "safe.heading": "Safe by default, auditable by design",
     "safe.sub": "Preview destructive actions first, then confirm.",
     "safe.dryrun_title": "Dry-run by default",
@@ -555,7 +606,7 @@
     "pricing.col_feature": "Capability",
     "pricing.col_free": "Free",
     "pricing.col_pro": "Pro",
-    "pricing.row_features": "All features (clean / files / merge / reports / presets / history)",
+    "pricing.row_features": "All eight pipelines (clean / files / merge / validate / report / compare / split / profile) + presets / recipes / history",
     "pricing.row_offline": "100% offline, data never leaves",
     "pricing.row_limit": "Files per run",
     "pricing.limit_free": "Up to 20",
