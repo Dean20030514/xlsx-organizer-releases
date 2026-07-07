@@ -239,7 +239,7 @@
 <section id="capabilities" aria-labelledby="cap-head">
   <div class="wrap">
     <div class="section-head">
-      <h2 id="cap-head" data-i18n="cap.heading">八个一起干活的子命令</h2>
+      <h2 id="cap-head" data-i18n="cap.heading">九个一起干活的子命令</h2>
       <p data-i18n="cap.sub">共享同一套配置与日志机制。</p>
     </div>
     <div class="cards">
@@ -282,6 +282,11 @@
         <span class="tag">profile</span>
         <h3 data-i18n="cap.profile_title">数据画像</h3>
         <p data-i18n="cap.profile_desc">只读摸底新导出：每列一行，给出推断类型、缺失数与占比、去重值数、最小 / 最大 / 均值和示例值——写清洗或校验规则之前，先看清数据长什么样。</p>
+      </div>
+      <div class="card">
+        <span class="tag">unpivot</span>
+        <h3 data-i18n="cap.unpivot_title">反透视</h3>
+        <p data-i18n="cap.unpivot_desc">把宽表反透视成长表（列变行，报表透视的逆操作）：指定的标识列原样保留，其余列或指定子集融成「字段 / 值」两列；可选丢弃空值行。一进一出、格式随输入，输出从不覆盖已有文件。</p>
       </div>
     </div>
   </div>
@@ -333,7 +338,7 @@
         </thead>
         <tbody>
           <tr>
-            <td data-i18n="pricing.row_features">全部八管道（清洗 / 整理 / 合并 / 校验 / 报表 / 对比 / 拆分 / 画像）+ 预设 / 配方 / 历史</td>
+            <td data-i18n="pricing.row_features">全部九管道（清洗 / 整理 / 合并 / 校验 / 报表 / 对比 / 拆分 / 画像 / 反透视）+ 预设 / 配方 / 历史</td>
             <td class="col"><span class="yes">&#10003;</span></td>
             <td class="col pro"><span class="yes">&#10003;</span></td>
           </tr>
@@ -453,7 +458,7 @@
         <a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer" data-i18n="footer.contact">联系</a>
       </nav>
     </div>
-    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.5.0</p>
+    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.6.0</p>
   </div>
 </footer>
 
@@ -476,7 +481,7 @@
     "trust.readonly": "输入只读不损坏",
     "trust.bilingual": "中英双语",
     "trust.cross": "跨平台",
-    "cap.heading": "八个一起干活的子命令",
+    "cap.heading": "九个一起干活的子命令",
     "cap.sub": "共享同一套配置与日志机制。",
     "cap.clean_title": "清洗数据",
     "cap.clean_desc": "在工作簿内部清理：去空行空列、去首尾空格、规范表头、按列去重、排序、按列拆分。输出到独立目录，原文件从不改动。",
@@ -494,6 +499,8 @@
     "cap.split_desc": "把一个工作簿拆成多个文件：按列值分组、按固定行数分块、或每个工作表一个文件。输出从不覆盖已有文件。",
     "cap.profile_title": "数据画像",
     "cap.profile_desc": "只读摸底新导出：每列一行，给出推断类型、缺失数与占比、去重值数、最小 / 最大 / 均值和示例值——写清洗或校验规则之前，先看清数据长什么样。",
+    "cap.unpivot_title": "反透视",
+    "cap.unpivot_desc": "把宽表反透视成长表（列变行，报表透视的逆操作）：指定的标识列原样保留，其余列或指定子集融成「字段 / 值」两列；可选丢弃空值行。一进一出、格式随输入，输出从不覆盖已有文件。",
     "safe.heading": "默认安全，逐步可控",
     "safe.sub": "破坏性操作前先预览，再确认。",
     "safe.dryrun_title": "默认 dry-run",
@@ -509,7 +516,7 @@
     "pricing.col_feature": "能力",
     "pricing.col_free": "免费版",
     "pricing.col_pro": "Pro",
-    "pricing.row_features": "全部八管道（清洗 / 整理 / 合并 / 校验 / 报表 / 对比 / 拆分 / 画像）+ 预设 / 配方 / 历史",
+    "pricing.row_features": "全部九管道（清洗 / 整理 / 合并 / 校验 / 报表 / 对比 / 拆分 / 画像 / 反透视）+ 预设 / 配方 / 历史",
     "pricing.row_offline": "100% 离线，数据不出本机",
     "pricing.row_limit": "每次运行文件上限",
     "pricing.limit_free": "最多 20 个",
@@ -573,7 +580,7 @@
     "trust.readonly": "Inputs read-only",
     "trust.bilingual": "Bilingual zh / en",
     "trust.cross": "Cross-platform",
-    "cap.heading": "Eight subcommands, one tool",
+    "cap.heading": "Nine subcommands, one tool",
     "cap.sub": "Sharing one config and logging mechanism.",
     "cap.clean_title": "Clean data",
     "cap.clean_desc": "Tidy data inside workbooks: drop empty rows/columns, trim cells, normalize headers, de-duplicate by columns, sort, split by column. Output goes to a separate folder; originals are never touched.",
@@ -591,6 +598,8 @@
     "cap.split_desc": "Split one workbook into many files: by key-column value, into fixed-size row chunks, or one file per sheet. Output never overwrites.",
     "cap.profile_title": "Profile data",
     "cap.profile_desc": "Read-only profiling of a fresh export: one row per column with inferred type, missing count and share, distinct values, min / max / mean and sample values — see what the data looks like before writing clean or validate rules.",
+    "cap.unpivot_title": "Unpivot data",
+    "cap.unpivot_desc": "Unpivot wide tables into long form — the inverse of report's pivot, turning columns into rows: keep the identifier columns and melt the rest (or a chosen subset) into a field / value pair; optionally drop blank-value rows. One file in, one out, format follows input; output never overwrites.",
     "safe.heading": "Safe by default, auditable by design",
     "safe.sub": "Preview destructive actions first, then confirm.",
     "safe.dryrun_title": "Dry-run by default",
@@ -606,7 +615,7 @@
     "pricing.col_feature": "Capability",
     "pricing.col_free": "Free",
     "pricing.col_pro": "Pro",
-    "pricing.row_features": "All eight pipelines (clean / files / merge / validate / report / compare / split / profile) + presets / recipes / history",
+    "pricing.row_features": "All nine pipelines (clean / files / merge / validate / report / compare / split / profile / unpivot) + presets / recipes / history",
     "pricing.row_offline": "100% offline, data never leaves",
     "pricing.row_limit": "Files per run",
     "pricing.limit_free": "Up to 20",
