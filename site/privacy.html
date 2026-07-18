@@ -88,13 +88,14 @@
         <p>xlsx-organizer 是一款离线工具。在设计上，<strong>你的电子表格数据不会离开你的设备</strong>。本政策说明软件如何处理数据，以及在你购买 Pro 时我们会收集什么信息。</p>
 
         <h2>2. 软件在本机处理的数据</h2>
-        <p>clean / files / merge 三个功能全部在你的设备本地完成；软件<strong>不会</strong>将你的文件内容上传到任何服务器。运行历史、预设、许可文件等都保存在你本机的 <code>~/.xlsx-organizer/</code> 目录下，由你掌控，可随时删除。</p>
+        <p>clean / files / merge / validate / report / compare / split / profile / unpivot / mask / enrich 全部十一个功能都在你的设备本地完成；软件<strong>不会</strong>将你的文件内容上传到任何服务器。运行历史、预设、许可文件等都保存在你本机的 <code>~/.xlsx-organizer/</code> 目录下，由你掌控，可随时删除。</p>
         <p>若你购买并安装 Pro 许可证，软件会读取本机一个稳定的机器标识符（在 Windows 上为系统的 MachineGuid），用于将许可证<strong>绑定</strong>到你的机器（"节点锁"）。软件只会保存并使用该标识符经加盐后的<strong>单向哈希</strong>（指纹）；原始标识符<strong>不会</strong>被存储或上传。该指纹仅用于离线校验本机是否在许可范围内。</p>
 
-        <h2>3. 唯一的联网行为：检查更新</h2>
-        <p>仅当你<strong>主动</strong>运行 <code>xlsx-organizer update check</code> 或在图形界面点击"检查更新"时，软件才会向 GitHub 发起一次请求，询问最新发布版本。该请求：</p>
+        <h2>3. 唯一的联网路径：手动更新</h2>
+        <p>仅当你<strong>主动</strong>运行 <code>xlsx-organizer update check</code>、在图形界面点击"检查更新"，或在发现新版本后点击应用内下载安装包时，软件才会向 GitHub 发起更新相关请求。这些请求：</p>
         <ul>
-          <li>只发送你的软件版本号（作为 User-Agent，如 <code>xlsx-organizer/0.6.0</code>）；</li>
+          <li>检查更新时发送你的软件版本号（作为 User-Agent，如 <code>xlsx-organizer/0.7.0</code>）；</li>
+          <li>应用内下载时请求该版本的安装包和 <code>SHA256SUMS.txt</code>，并在本机校验后才允许安装；</li>
           <li>与任何网络请求一样，目标服务器（GitHub）会看到你的 IP 地址；</li>
           <li><strong>不</strong>发送你的任何文件内容、文件名或个人信息。</li>
         </ul>
@@ -132,13 +133,14 @@
         <p>xlsx-organizer is an offline tool. By design, <strong>your spreadsheet data never leaves your device</strong>. This policy explains how the software handles data and what we collect when you buy Pro.</p>
 
         <h2>2. Data the software processes locally</h2>
-        <p>The clean / files / merge features all run locally on your device; the software <strong>does not</strong> upload your file contents to any server. Run history, presets, and the license file are stored under <code>~/.xlsx-organizer/</code> on your own machine, under your control, and can be deleted at any time.</p>
+        <p>The clean / files / merge / validate / report / compare / split / profile / unpivot / mask / enrich features — all eleven of them — run locally on your device; the software <strong>does not</strong> upload your file contents to any server. Run history, presets, and the license file are stored under <code>~/.xlsx-organizer/</code> on your own machine, under your control, and can be deleted at any time.</p>
         <p>If you buy and install a Pro license, the software reads one stable machine identifier (on Windows, the system's MachineGuid) to <strong>bind</strong> the license to your machine (a "node-lock"). It stores and uses only a salted, <strong>one-way hash</strong> (a fingerprint) of that identifier; the raw identifier is <strong>not</strong> stored or transmitted. The fingerprint is used only to check, offline, whether this machine is covered by the license.</p>
 
-        <h2>3. The only network activity: update check</h2>
-        <p>Only when you <strong>explicitly</strong> run <code>xlsx-organizer update check</code> or click "Check for updates" in the GUI does the software make a single request to GitHub asking for the latest released version. That request:</p>
+        <h2>3. The only network path: manual updates</h2>
+        <p>Only when you <strong>explicitly</strong> run <code>xlsx-organizer update check</code>, click "Check for updates" in the GUI, or choose the in-app download after a newer release is found does the software make update-related requests to GitHub. Those requests:</p>
         <ul>
-          <li>sends only your software version (as a User-Agent, e.g. <code>xlsx-organizer/0.6.0</code>);</li>
+          <li>send your software version during the update check (as a User-Agent, e.g. <code>xlsx-organizer/0.7.0</code>);</li>
+          <li>request that release's installer and <code>SHA256SUMS.txt</code> when you download the installer in app, which is verified locally before installation is offered;</li>
           <li>like any network request, lets the destination (GitHub) see your IP address;</li>
           <li><strong>does not</strong> send any of your file contents, file names, or personal information.</li>
         </ul>
@@ -188,7 +190,7 @@
         <a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer" data-i18n="footer.contact">联系</a>
       </nav>
     </div>
-    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.6.0</p>
+    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.7.0</p>
   </div>
 </footer>
 
