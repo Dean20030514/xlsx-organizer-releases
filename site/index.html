@@ -239,8 +239,8 @@
 <section id="capabilities" aria-labelledby="cap-head">
   <div class="wrap">
     <div class="section-head">
-      <h2 id="cap-head" data-i18n="cap.heading">十一个一起干活的子命令</h2>
-      <p data-i18n="cap.sub">共享同一套配置与日志机制。</p>
+      <h2 id="cap-head" data-i18n="cap.heading">十二个一起干活的子命令</h2>
+      <p data-i18n="cap.sub">共享同一套配置与日志机制，还能串成多步工作流一次跑完。</p>
     </div>
     <div class="cards">
       <div class="card">
@@ -298,6 +298,11 @@
         <h3 data-i18n="cap.enrich_title">补充列</h3>
         <p data-i18n="cap.enrich_desc">按同名关键列从一张参考表给每个导出补上新列——声明式的 VLOOKUP：左连接语义，行数与顺序不变，未匹配的行留空，已有列从不覆盖。一进一出、格式随输入，输出从不覆盖已有文件。</p>
       </div>
+      <div class="card">
+        <span class="tag">reconcile</span>
+        <h3 data-i18n="cap.reconcile_title">两侧对账</h3>
+        <p data-i18n="cap.reconcile_desc">按键列（可选金额±容差）把台账与银行流水逐行撮合：已配上、未配上、有歧义的各自单独成表，歧义绝不自动选。内置「月结对账」作业把清洗 → 对账 → 校验 → 两期比较串成一键闭环。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -348,7 +353,7 @@
         </thead>
         <tbody>
           <tr>
-            <td data-i18n="pricing.row_features">全部十一管道（清洗 / 整理 / 合并 / 校验 / 报表 / 对比 / 拆分 / 画像 / 反透视 / 脱敏 / 补列）+ 预设 / 配方 / 历史</td>
+            <td data-i18n="pricing.row_features">全部十二管道（清洗 / 整理 / 合并 / 校验 / 报表 / 对比 / 拆分 / 画像 / 反透视 / 脱敏 / 补列 / 对账）+ 预设 / 配方 / 工作流（含内置月结作业）/ 历史</td>
             <td class="col"><span class="yes">&#10003;</span></td>
             <td class="col pro"><span class="yes">&#10003;</span></td>
           </tr>
@@ -359,7 +364,7 @@
           </tr>
           <tr>
             <td data-i18n="pricing.row_limit">每次运行文件上限</td>
-            <td class="col" data-i18n="pricing.limit_free">多数 20 个；mask / enrich 5 个；compare 2 期</td>
+            <td class="col" data-i18n="pricing.limit_free">多数 20 个；mask / enrich 5 个；compare 2 期；reconcile 两侧合计 2 个</td>
             <td class="col pro" data-i18n="pricing.limit_pro">无限</td>
           </tr>
           <tr>
@@ -436,7 +441,7 @@
       </details>
       <details>
         <summary data-i18n="faq.q3">免费版和 Pro 有什么区别？</summary>
-        <p data-i18n="faq.a3">每个管道免费版都能跑。多数管道每次运行最多处理 20 个文件，mask / enrich 为 5 个，compare 为 2 个（两期对比免费，对比 3 期及以上需要 Pro）；Pro 解除全部上限。许可是离线签名文件，无需账号或激活服务器。</p>
+        <p data-i18n="faq.a3">每个管道免费版都能跑。多数管道每次运行最多处理 20 个文件，mask / enrich 为 5 个，compare 为 2 个（两期对比免费，对比 3 期及以上需要 Pro），reconcile 为两侧合计 2 个源文件（单文件对单文件免费，文件夹批量需要 Pro）；Pro 解除全部上限。许可是离线签名文件，无需账号或激活服务器。</p>
       </details>
       <details>
         <summary data-i18n="faq.q4">原文件会被改动吗？</summary>
@@ -468,7 +473,7 @@
         <a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer" data-i18n="footer.contact">联系</a>
       </nav>
     </div>
-    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.7.0</p>
+    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.8.0</p>
   </div>
 </footer>
 
@@ -491,8 +496,8 @@
     "trust.readonly": "输入只读不损坏",
     "trust.bilingual": "中英双语",
     "trust.cross": "跨平台",
-    "cap.heading": "十一个一起干活的子命令",
-    "cap.sub": "共享同一套配置与日志机制。",
+    "cap.heading": "十二个一起干活的子命令",
+    "cap.sub": "共享同一套配置与日志机制，还能串成多步工作流一次跑完。",
     "cap.clean_title": "清洗数据",
     "cap.clean_desc": "在工作簿内部清理：去空行空列、去首尾空格、规范表头、按列去重、排序、按列拆分。输出到独立目录，原文件从不改动。",
     "cap.files_title": "整理文件",
@@ -515,6 +520,8 @@
     "cap.mask_desc": "按声明式规则把手机号 / 身份证 / 姓名等敏感列脱敏成可安全外发的副本：整体遮盖、保留首尾、哈希、置空四种策略，空单元格保持为空。一进一出、格式随输入，原文件从不改动。",
     "cap.enrich_title": "补充列",
     "cap.enrich_desc": "按同名关键列从一张参考表给每个导出补上新列——声明式的 VLOOKUP：左连接语义，行数与顺序不变，未匹配的行留空，已有列从不覆盖。一进一出、格式随输入，输出从不覆盖已有文件。",
+    "cap.reconcile_title": "两侧对账",
+    "cap.reconcile_desc": "按键列（可选金额±容差）把台账与银行流水逐行撮合：已配上、未配上、有歧义的各自单独成表，歧义绝不自动选。内置「月结对账」作业把清洗 → 对账 → 校验 → 两期比较串成一键闭环。",
     "safe.heading": "默认安全，逐步可控",
     "safe.sub": "破坏性操作前先预览，再确认。",
     "safe.dryrun_title": "默认 dry-run",
@@ -530,10 +537,10 @@
     "pricing.col_feature": "能力",
     "pricing.col_free": "免费版",
     "pricing.col_pro": "Pro",
-    "pricing.row_features": "全部十一管道（清洗 / 整理 / 合并 / 校验 / 报表 / 对比 / 拆分 / 画像 / 反透视 / 脱敏 / 补列）+ 预设 / 配方 / 历史",
+    "pricing.row_features": "全部十二管道（清洗 / 整理 / 合并 / 校验 / 报表 / 对比 / 拆分 / 画像 / 反透视 / 脱敏 / 补列 / 对账）+ 预设 / 配方 / 工作流（含内置月结作业）/ 历史",
     "pricing.row_offline": "100% 离线，数据不出本机",
     "pricing.row_limit": "每次运行文件上限",
-    "pricing.limit_free": "多数 20 个；mask / enrich 5 个；compare 2 期",
+    "pricing.limit_free": "多数 20 个；mask / enrich 5 个；compare 2 期；reconcile 两侧合计 2 个",
     "pricing.limit_pro": "无限",
     "pricing.row_license": "许可方式",
     "pricing.license_free": "无需许可",
@@ -564,7 +571,7 @@
     "faq.q2": "我的数据会被上传吗？",
     "faq.a2": "不会。处理全程在本机完成。唯一的联网路径是你手动检查或在应用内下载更新安装包；没有自动或后台联网。",
     "faq.q3": "免费版和 Pro 有什么区别？",
-    "faq.a3": "每个管道免费版都能跑。多数管道每次运行最多处理 20 个文件，mask / enrich 为 5 个，compare 为 2 个（两期对比免费，对比 3 期及以上需要 Pro）；Pro 解除全部上限。许可是离线签名文件，无需账号或激活服务器。",
+    "faq.a3": "每个管道免费版都能跑。多数管道每次运行最多处理 20 个文件，mask / enrich 为 5 个，compare 为 2 个（两期对比免费，对比 3 期及以上需要 Pro），reconcile 为两侧合计 2 个源文件（单文件对单文件免费，文件夹批量需要 Pro）；Pro 解除全部上限。许可是离线签名文件，无需账号或激活服务器。",
     "faq.q4": "原文件会被改动吗？",
     "faq.a4": "不会。输入始终只读；文件操作默认只预览，去重只移动不删除，破损 / 加密文件会被记录并跳过。",
     "footer.tagline": "离线 Excel 批处理工具，为中小团队的财务 / 行政 / 运营。",
@@ -594,8 +601,8 @@
     "trust.readonly": "Inputs read-only",
     "trust.bilingual": "Bilingual zh / en",
     "trust.cross": "Cross-platform",
-    "cap.heading": "Eleven subcommands, one tool",
-    "cap.sub": "Sharing one config and logging mechanism.",
+    "cap.heading": "Twelve subcommands, one tool",
+    "cap.sub": "Sharing one config and logging mechanism — and chainable into multi-step workflows.",
     "cap.clean_title": "Clean data",
     "cap.clean_desc": "Tidy data inside workbooks: drop empty rows/columns, trim cells, normalize headers, de-duplicate by columns, sort, split by column. Output goes to a separate folder; originals are never touched.",
     "cap.files_title": "Organize files",
@@ -618,6 +625,8 @@
     "cap.mask_desc": "Mask sensitive columns (phone / ID / name …) into copies that are safe to share outside, by declarative rules: redact, keep head/tail, hash, or blank — blank cells stay blank. One file in, one out, format follows input; originals are never touched.",
     "cap.enrich_title": "Enrich columns",
     "cap.enrich_desc": "Add reference-table columns to every export by shared key columns — a declarative VLOOKUP: left-join semantics keep row count and order, unmatched rows stay blank, existing columns are never overwritten. One file in, one out, format follows input; output never overwrites.",
+    "cap.reconcile_title": "Reconcile two sides",
+    "cap.reconcile_desc": "Match a ledger against a bank statement row by row, by key columns and an optional amount with tolerance: matched, unmatched and ambiguous rows land on separate sheets — nothing is auto-picked. The built-in month-close job chains clean → reconcile → validate → compare into one run.",
     "safe.heading": "Safe by default, auditable by design",
     "safe.sub": "Preview destructive actions first, then confirm.",
     "safe.dryrun_title": "Dry-run by default",
@@ -633,10 +642,10 @@
     "pricing.col_feature": "Capability",
     "pricing.col_free": "Free",
     "pricing.col_pro": "Pro",
-    "pricing.row_features": "All eleven pipelines (clean / files / merge / validate / report / compare / split / profile / unpivot / mask / enrich) + presets / recipes / history",
+    "pricing.row_features": "All twelve pipelines (clean / files / merge / validate / report / compare / split / profile / unpivot / mask / enrich / reconcile) + presets / recipes / workflows (with a built-in month-close job) / history",
     "pricing.row_offline": "100% offline, data never leaves",
     "pricing.row_limit": "Files per run",
-    "pricing.limit_free": "20 on most; 5 for mask / enrich; 2 for compare",
+    "pricing.limit_free": "20 on most; 5 for mask / enrich; 2 for compare; 2 across both sides for reconcile",
     "pricing.limit_pro": "Unlimited",
     "pricing.row_license": "Licensing",
     "pricing.license_free": "No license needed",
@@ -667,7 +676,7 @@
     "faq.q2": "Is my data uploaded anywhere?",
     "faq.a2": "No. All processing happens locally. The only network path is when you manually trigger checking for or downloading an update installer; nothing runs automatically or in the background.",
     "faq.q3": "What's the difference between Free and Pro?",
-    "faq.a3": "Every pipeline runs on Free. Most pipelines cap each run at 20 files, mask / enrich at 5, and compare at 2 (a two-period compare is free; comparing 3 or more periods needs Pro); Pro removes every cap. The license is an offline signed file — no account, no activation server.",
+    "faq.a3": "Every pipeline runs on Free. Most pipelines cap each run at 20 files, mask / enrich at 5, compare at 2 (a two-period compare is free; comparing 3 or more periods needs Pro), and reconcile at 2 source files across both sides (file vs file is free; folder batches need Pro); Pro removes every cap. The license is an offline signed file — no account, no activation server.",
     "faq.q4": "Can it damage my original files?",
     "faq.a4": "No. Inputs are always read-only; file operations preview by default, dedup moves rather than deletes, and broken / encrypted files are logged and skipped.",
     "footer.tagline": "Offline Excel batch tool for SMB finance / admin / ops teams.",
