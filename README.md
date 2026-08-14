@@ -7,15 +7,9 @@
  · [**官网 / Website**](https://dean20030514.github.io/xlsx-organizer-releases/)
  · [**更新记录 / All releases**](https://github.com/Dean20030514/xlsx-organizer-releases/releases)
 
-<!--
-国内镜像占位：Gitee 仓库建好后，把下面整段取消注释、把 <owner> 换成真实账号名，
-并删除本条 HTML 注释。渲染前它对访客完全不可见，所以现在推送也不会露出半成品。
-
-> 🇨🇳 **国内用户**：GitHub 下载不稳定时请走
-> [Gitee 镜像](https://gitee.com/<owner>/xlsx-organizer-releases/releases)（国内直连，无需代理），
-> 或访问 [Gitee Pages 站点](https://<owner>.gitee.io/xlsx-organizer-releases/)。
-> 两边发布同一个安装包，SHA256 一致，可互相校验。
--->
+> 🇨🇳 **国内用户**：GitHub 下载慢或打不开时，请走
+> [**Gitee 镜像**](https://gitee.com/Dean20030514/xlsx-organizer-releases/releases)（国内直连，无需代理）。
+> 两边发布的是同一次构建的同一批文件，SHA256 完全一致，可互相校验。
 
 ---
 
