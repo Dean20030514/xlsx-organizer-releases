@@ -306,7 +306,7 @@
       <div class="card">
         <span class="tag">reconcile</span>
         <h3 data-i18n="cap.reconcile_title">两侧对账</h3>
-        <p data-i18n="cap.reconcile_desc">按键列（可选金额±容差）把台账与银行流水逐行撮合：已配上、未配上、有歧义的各自单独成表，歧义绝不自动选。内置「月结对账」作业把清洗 → 对账 → 校验 → 两期比较串成一键闭环。</p>
+        <p data-i18n="cap.reconcile_desc">按键列（可选金额±容差）把台账与银行流水逐行撮合：已配上、未配上、有歧义的各自单独成表，歧义绝不自动选。内置「月结对账」作业把清洗 → 对账 → 校验 → 两期比较串成一键闭环，并在仍有差异时额外导出一张异常汇总。</p>
       </div>
     </div>
   </div>
@@ -483,7 +483,7 @@
         <a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer" data-i18n="footer.contact">联系</a>
       </nav>
     </div>
-    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.8.0</p>
+    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.9.0</p>
   </div>
 </footer>
 
@@ -531,7 +531,7 @@
     "cap.enrich_title": "补充列",
     "cap.enrich_desc": "按同名关键列从一张参考表给每个导出补上新列——声明式的 VLOOKUP：左连接语义，行数与顺序不变，未匹配的行留空，已有列从不覆盖。一进一出、格式随输入，输出从不覆盖已有文件。",
     "cap.reconcile_title": "两侧对账",
-    "cap.reconcile_desc": "按键列（可选金额±容差）把台账与银行流水逐行撮合：已配上、未配上、有歧义的各自单独成表，歧义绝不自动选。内置「月结对账」作业把清洗 → 对账 → 校验 → 两期比较串成一键闭环。",
+    "cap.reconcile_desc": "按键列（可选金额±容差）把台账与银行流水逐行撮合：已配上、未配上、有歧义的各自单独成表，歧义绝不自动选。内置「月结对账」作业把清洗 → 对账 → 校验 → 两期比较串成一键闭环，并在仍有差异时额外导出一张异常汇总。",
     "safe.heading": "默认安全，逐步可控",
     "safe.sub": "破坏性操作前先预览，再确认。",
     "safe.dryrun_title": "默认 dry-run",
@@ -639,7 +639,7 @@
     "cap.enrich_title": "Enrich columns",
     "cap.enrich_desc": "Add reference-table columns to every export by shared key columns — a declarative VLOOKUP: left-join semantics keep row count and order, unmatched rows stay blank, existing columns are never overwritten. One file in, one out, format follows input; output never overwrites.",
     "cap.reconcile_title": "Reconcile two sides",
-    "cap.reconcile_desc": "Match a ledger against a bank statement row by row, by key columns and an optional amount with tolerance: matched, unmatched and ambiguous rows land on separate sheets — nothing is auto-picked. The built-in month-close job chains clean → reconcile → validate → compare into one run.",
+    "cap.reconcile_desc": "Match a ledger against a bank statement row by row, by key columns and an optional amount with tolerance: matched, unmatched and ambiguous rows land on separate sheets — nothing is auto-picked. The built-in month-close job chains clean → reconcile → validate → compare into one run, and exports an exceptions summary when a discrepancy remains.",
     "safe.heading": "Safe by default, auditable by design",
     "safe.sub": "Preview destructive actions first, then confirm.",
     "safe.dryrun_title": "Dry-run by default",
