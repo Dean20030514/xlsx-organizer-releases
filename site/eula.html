@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>最终用户许可协议 / EULA — xlsx-organizer</title>
-<meta name="description" content="xlsx-organizer 最终用户许可协议（专有商业授权）。End User License Agreement for xlsx-organizer (proprietary).">
+<meta name="description" content="xlsx-organizer 最终用户许可协议（免费专有软件）。End User License Agreement for xlsx-organizer (proprietary freeware).">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232563eb'/%3E%3Cg fill='%23fff'%3E%3Crect x='5' y='6' width='14' height='2.2' rx='1'/%3E%3Crect x='5' y='10.9' width='14' height='2.2' rx='1'/%3E%3Crect x='5' y='15.8' width='9' height='2.2' rx='1'/%3E%3C/g%3E%3C/svg%3E">
 <style>
   :root{
@@ -83,104 +83,102 @@
     <!-- zh -->
     <div class="lang-block active" data-lang="zh">
       <h1 class="legal-title">最终用户许可协议（EULA）</h1>
-      <p class="effective">生效日期：2026-09-09</p>
+      <p class="effective">生效日期：2026-10-19</p>
       <div class="legal-body">
         <h2>1. 协议的接受</h2>
         <p>本最终用户许可协议（下称"<strong>本协议</strong>"）是你（个人或实体）与 xlsx-organizer 的作者 <strong>Yanxiao Zheng</strong>（下称"<strong>许可方</strong>"）之间就 xlsx-organizer 软件（下称"<strong>软件</strong>"）达成的法律协议。下载、安装或使用软件，即表示你同意受本协议约束；如不同意，请勿安装或使用软件。</p>
 
-        <h2>2. 许可授予</h2>
-        <p>在你遵守本协议的前提下，许可方授予你一项非独占、不可转让、可撤销的许可，在你拥有或控制的设备上安装并使用软件：</p>
-        <ul>
-          <li><strong>免费版：</strong>每个管道都能运行，但每次运行的源文件数按管道设限：多数管道 20 个，mask / enrich 5 个，compare 2 个（两期对比免费，对比 3 期及以上需要 Pro），reconcile 两侧合计 2 个（单文件对单文件免费，文件夹批量需要 Pro）。</li>
-          <li><strong>Pro：</strong>安装有效的、经数字签名的 Pro 许可文件后解除全部文件数量上限。Pro 许可<strong>按席位（每席位绑定一台机器）</strong>授予，仅限购买方组织内部使用，<strong>不可转让</strong>。许可文件通过机器指纹绑定到你登记的机器（"节点锁"），复制到其他机器不会生效；更换硬件后请联系许可方重新签发。</li>
-        </ul>
+        <h2>2. 免费许可</h2>
+        <p>软件是<strong>免费的专有软件</strong>：免费提供，但<strong>不开源</strong>。在你遵守本协议的前提下，许可方免费授予你一项非独占、不可转让、可撤销的许可，在任意数量的设备上下载、安装和使用软件，用于<strong>个人或商业用途</strong>（包括在你的组织内部使用）。软件的全部功能都可免费使用，没有文件数量上限，也不需要许可证文件、账号或激活。</p>
 
-        <h2>3. 使用限制</h2>
+        <h2>3. 转发</h2>
+        <p>你可以<strong>免费</strong>向他人转发软件<strong>未经修改</strong>的官方发布版本（安装包或免安装 exe），前提是保留其中的全部版权声明、许可文件和本协议，且不就软件本身收取任何费用。接收者同样受本协议约束。</p>
+
+        <h2>4. 使用限制</h2>
         <p>你不得：</p>
         <ul>
-          <li>规避、移除或以任何方式绕过免费版的文件数量上限；</li>
-          <li>为上述目的对软件进行反向工程、反编译或反汇编（在适用法律强制允许的范围之外）；</li>
-          <li>复制、转售、出租、再许可或再分发软件，或分享 Pro 许可文件；</li>
+          <li>出售、出租、租赁或再许可软件，或就软件本身收取任何费用；</li>
+          <li>对软件进行反向工程、反编译或反汇编（在适用法律强制允许的范围之外）；</li>
+          <li>分发经修改的软件，或基于软件的衍生作品；</li>
           <li>移除或更改软件中的任何版权、商标或专有权利声明。</li>
         </ul>
 
-        <h2>4. 知识产权</h2>
-        <p>软件及其全部副本的一切权利、所有权和利益（包括相关知识产权）均归许可方所有。本协议仅授予使用许可，不转让任何所有权。</p>
+        <h2>5. 知识产权</h2>
+        <p>免费提供不改变软件的专有性质。软件及其全部副本的一切权利、所有权和利益（包括相关知识产权）均归许可方所有。本协议仅授予使用许可，不转让任何所有权，也不授予获取源代码的权利。</p>
 
-        <h2>5. 第三方组件</h2>
-        <p>软件包含按其各自开源许可证分发的第三方库（如 pandas、openpyxl、click、PyYAML、cryptography）。这些组件的许可证不受本协议影响，其声明随附于各自项目。</p>
+        <h2>6. 第三方组件</h2>
+        <p>软件包含按其各自开源许可证分发的第三方库（如 pandas、numpy、openpyxl、xlrd、click、PyYAML）。这些组件的许可证不受本协议影响，其声明随附于各自项目。</p>
 
-        <h2>6. 数据与隐私</h2>
+        <h2>7. 数据与隐私</h2>
         <p>软件在本机离线运行；唯一的联网行为是你手动触发的"检查更新"，以及你在发现新版本后主动选择的应用内下载安装包。详见<a href="privacy.html">隐私政策</a>。</p>
 
-        <h2>7. 无担保</h2>
-        <p>软件按"<strong>现状</strong>"提供，不附带任何明示或默示的担保，包括但不限于对适销性、特定用途适用性及不侵权的担保。你自行承担使用软件的风险，并应对所处理的数据自行备份。</p>
+        <h2>8. 无担保</h2>
+        <p>软件免费并按"<strong>现状</strong>"提供，不附带任何明示或默示的担保，包括但不限于对适销性、特定用途适用性及不侵权的担保。许可方没有义务提供支持、更新或缺陷修复。你自行承担使用软件的风险，并应对所处理的数据自行备份。</p>
 
-        <h2>8. 责任限制</h2>
-        <p>在适用法律允许的最大范围内，许可方不对任何间接、偶发、特殊或后果性损失（包括数据丢失或业务中断）承担责任；许可方在本协议项下的累计责任不超过你为 Pro 许可实际支付的金额。</p>
+        <h2>9. 责任限制</h2>
+        <p>在适用法律允许的最大范围内，许可方不对因使用或无法使用软件而产生的任何损失承担责任，包括但不限于间接、偶发、特殊或后果性损失（如数据丢失或业务中断）。适用法律不允许排除或限制的责任不受本条影响。</p>
 
-        <h2>9. 期限与终止</h2>
-        <p>本协议在你使用软件期间持续有效。若你违反本协议，许可自动终止，你须立即停止使用并删除软件的全部副本。</p>
+        <h2>10. 期限与终止</h2>
+        <p>本协议在你使用软件期间持续有效。若你违反本协议，许可自动终止，你须立即停止使用并删除软件的全部副本。许可方可随时修改或停止提供软件。</p>
 
-        <h2>10. 适用法律</h2>
+        <h2>11. 适用法律</h2>
         <p>本协议受<strong>中华人民共和国法律</strong>管辖并据其解释（不含其冲突法规则）。</p>
 
-        <h2>11. 联系方式</h2>
+        <h2>12. 联系方式</h2>
         <p>就本协议的任何问题，请联系 <a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer%20EULA">deanymrq@gmail.com</a>。</p>
 
-        <p class="note">本文档为通用模板，不构成法律意见。正式商用前建议由你或专业律师审阅并按你的实际主体、税务与司法管辖情况调整。</p>
+        <p class="note">本文档为通用模板，不构成法律意见。正式发布前建议由你或专业律师审阅并按你的实际主体与司法管辖情况调整。</p>
       </div>
     </div>
 
     <!-- en -->
     <div class="lang-block" data-lang="en">
       <h1 class="legal-title">End User License Agreement (EULA)</h1>
-      <p class="effective">Effective date: 2026-09-09</p>
+      <p class="effective">Effective date: 2026-10-19</p>
       <div class="legal-body">
         <h2>1. Acceptance</h2>
         <p>This End User License Agreement (the "<strong>Agreement</strong>") is a legal agreement between you (an individual or entity) and <strong>Yanxiao Zheng</strong>, the author of xlsx-organizer (the "<strong>Licensor</strong>"), governing the xlsx-organizer software (the "<strong>Software</strong>"). By downloading, installing, or using the Software you agree to be bound by this Agreement; if you do not agree, do not install or use the Software.</p>
 
-        <h2>2. Grant of License</h2>
-        <p>Subject to your compliance with this Agreement, the Licensor grants you a non-exclusive, non-transferable, revocable license to install and use the Software on devices you own or control:</p>
-        <ul>
-          <li><strong>Free tier:</strong> every pipeline runs, with per-run source-file caps set by pipeline: 20 for most, 5 for mask / enrich, 2 for compare (a two-period comparison is free; comparing 3 or more periods requires Pro), and 2 across both sides for reconcile (file vs file is free; folder batches require Pro).</li>
-          <li><strong>Pro:</strong> installing a valid, digitally signed Pro license file removes all per-run file caps. Pro licenses are granted <strong>per seat (each seat bound to one machine)</strong>, for internal use within the purchasing organization only, and are <strong>non-transferable</strong>. The license file is bound to the machine(s) you register via a machine fingerprint (a "node-lock"); copying it to another machine will not work. If your hardware changes, contact the Licensor for a re-issue.</li>
-        </ul>
+        <h2>2. Free License</h2>
+        <p>The Software is <strong>proprietary freeware</strong>: it is free of charge, but it is <strong>not open source</strong>. Subject to your compliance with this Agreement, the Licensor grants you, free of charge, a non-exclusive, non-transferable, revocable license to download, install, and use the Software on any number of devices, for <strong>personal or commercial purposes</strong> (including use within your organization). Every feature is free to use, with no file-count limit, and no license file, account, or activation is required.</p>
 
-        <h2>3. Restrictions</h2>
+        <h2>3. Passing It On</h2>
+        <p>You may pass on <strong>unmodified</strong> copies of an official release of the Software (the installer or the standalone exe) to others <strong>free of charge</strong>, provided every copyright notice, the license file, and this Agreement stay intact and you charge no fee for the Software itself. Recipients are bound by this Agreement as well.</p>
+
+        <h2>4. Restrictions</h2>
         <p>You may not:</p>
         <ul>
-          <li>circumvent, remove, or otherwise bypass the free-tier file cap;</li>
-          <li>reverse engineer, decompile, or disassemble the Software for that purpose (except to the extent applicable law expressly permits);</li>
-          <li>copy, resell, rent, sublicense, or redistribute the Software, or share a Pro license file;</li>
+          <li>sell, rent, lease, or sublicense the Software, or charge any fee for the Software itself;</li>
+          <li>reverse engineer, decompile, or disassemble the Software (except to the extent applicable law expressly permits);</li>
+          <li>distribute a modified version of the Software or a derivative work based on it;</li>
           <li>remove or alter any copyright, trademark, or proprietary notices.</li>
         </ul>
 
-        <h2>4. Intellectual Property</h2>
-        <p>All right, title, and interest in and to the Software and all copies (including related intellectual property rights) belong to the Licensor. This Agreement grants a license only and transfers no ownership.</p>
+        <h2>5. Intellectual Property</h2>
+        <p>Being free of charge does not change the Software's proprietary nature. All right, title, and interest in and to the Software and all copies (including related intellectual property rights) belong to the Licensor. This Agreement grants a license only; it transfers no ownership and grants no right to the source code.</p>
 
-        <h2>5. Third-Party Components</h2>
-        <p>The Software bundles third-party libraries (e.g. pandas, openpyxl, click, PyYAML, cryptography) distributed under their own open-source licenses. Those licenses are unaffected by this Agreement; their notices accompany their respective projects.</p>
+        <h2>6. Third-Party Components</h2>
+        <p>The Software bundles third-party libraries (e.g. pandas, numpy, openpyxl, xlrd, click, PyYAML) distributed under their own open-source licenses. Those licenses are unaffected by this Agreement; their notices accompany their respective projects.</p>
 
-        <h2>6. Data &amp; Privacy</h2>
+        <h2>7. Data &amp; Privacy</h2>
         <p>The Software runs locally and offline; the only network activity is the manual update check you trigger yourself, plus the in-app installer download you choose to start after a newer release is found. See the <a href="privacy.html">Privacy Policy</a>.</p>
 
-        <h2>7. No Warranty</h2>
-        <p>The Software is provided "<strong>as is</strong>", without warranty of any kind, express or implied, including without limitation warranties of merchantability, fitness for a particular purpose, and non-infringement. You use the Software at your own risk and are responsible for backing up the data you process.</p>
+        <h2>8. No Warranty</h2>
+        <p>The Software is provided free of charge and "<strong>as is</strong>", without warranty of any kind, express or implied, including without limitation warranties of merchantability, fitness for a particular purpose, and non-infringement. The Licensor has no obligation to provide support, updates, or fixes. You use the Software at your own risk and are responsible for backing up the data you process.</p>
 
-        <h2>8. Limitation of Liability</h2>
-        <p>To the maximum extent permitted by applicable law, the Licensor shall not be liable for any indirect, incidental, special, or consequential damages (including loss of data or business interruption); the Licensor's aggregate liability under this Agreement shall not exceed the amount you actually paid for a Pro license.</p>
+        <h2>9. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by applicable law, the Licensor shall not be liable for any damages arising from the use of or inability to use the Software, including without limitation indirect, incidental, special, or consequential damages (such as loss of data or business interruption). Liability that applicable law does not allow to be excluded or limited is unaffected by this section.</p>
 
-        <h2>9. Term &amp; Termination</h2>
-        <p>This Agreement remains in effect while you use the Software. If you breach it, the license terminates automatically and you must stop using and delete all copies of the Software.</p>
+        <h2>10. Term &amp; Termination</h2>
+        <p>This Agreement remains in effect while you use the Software. If you breach it, the license terminates automatically and you must stop using and delete all copies of the Software. The Licensor may change or discontinue the Software at any time.</p>
 
-        <h2>10. Governing Law</h2>
+        <h2>11. Governing Law</h2>
         <p>This Agreement is governed by and construed under the <strong>laws of the People's Republic of China</strong> (excluding its conflict-of-laws rules).</p>
 
-        <h2>11. Contact</h2>
+        <h2>12. Contact</h2>
         <p>For any questions about this Agreement, contact <a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer%20EULA">deanymrq@gmail.com</a>.</p>
 
-        <p class="note">This document is a generic template and does not constitute legal advice. Before relying on it commercially, have it reviewed by you or a qualified lawyer and adapted to your actual entity, tax, and jurisdiction.</p>
+        <p class="note">This document is a generic template and does not constitute legal advice. Before publishing it, have it reviewed by you or a qualified lawyer and adapted to your actual entity and jurisdiction.</p>
       </div>
     </div>
   </div>
@@ -199,13 +197,12 @@
       <nav class="foot-links" aria-label="页脚链接 / Footer">
         <a href="eula.html" data-i18n="footer.eula">许可协议</a>
         <a href="privacy.html" data-i18n="footer.privacy">隐私政策</a>
-        <a href="refund.html" data-i18n="footer.refund">退款政策</a>
-        <a href="support.html" data-i18n="footer.support">支持与开票</a>
+        <a href="support.html" data-i18n="footer.support">支持</a>
         <a href="https://github.com/Dean20030514/xlsx-organizer-releases/releases/latest" data-i18n="footer.releases">发布</a>
         <a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer" data-i18n="footer.contact">联系</a>
       </nav>
     </div>
-    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.9.0</p>
+    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.10.0</p>
   </div>
 </footer>
 
@@ -216,8 +213,7 @@
     "footer.tagline": "离线 Excel 批处理工具，为中小团队的财务 / 行政 / 运营。",
     "footer.eula": "许可协议",
     "footer.privacy": "隐私政策",
-    "footer.refund": "退款政策",
-    "footer.support": "支持与开票",
+    "footer.support": "支持",
     "footer.releases": "发布",
     "footer.contact": "联系",
     "footer.copyright": "© 2026 xlsx-organizer"
@@ -227,8 +223,7 @@
     "footer.tagline": "Offline Excel batch tool for SMB finance / admin / ops teams.",
     "footer.eula": "License",
     "footer.privacy": "Privacy",
-    "footer.refund": "Refunds",
-    "footer.support": "Support & invoicing",
+    "footer.support": "Support",
     "footer.releases": "Releases",
     "footer.contact": "Contact",
     "footer.copyright": "© 2026 xlsx-organizer"

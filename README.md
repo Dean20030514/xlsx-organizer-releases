@@ -69,12 +69,11 @@ xlsx-organizer 把「每个月都要手工重复一遍」的表格活儿变成�
 **系统要求**：64 位 Windows。图形界面需要 WebView2 运行时——安装包会在缺失时自动引导安装。
 macOS / Linux 可从源码构建（纯 Python，跨平台），请联系我们获取。
 
-### 免费版 vs Pro
+### 完全免费
 
-每个管道免费版都能跑。多数管道每次运行最多处理 20 个文件，mask / enrich 为 5 个，
-compare 为 2 个（两期对比免费，对比 3 期及以上需要 Pro），reconcile 为两侧合计
-2 个源文件（单文件对单文件免费，文件夹批量需要 Pro）；Pro 解除全部上限。
-许可是离线签名文件，**无需账号或激活服务器**，绑定到你注册的机器。
+从 v0.10.0 起，xlsx-organizer **完全免费**：全部功能可用，没有文件数上限，
+不需要许可证、账号或激活，个人和商业用途均可。它是免费软件，但**不开源**。
+v0.9.0 及更早的版本仍有每次运行的文件数上限，请升级到最新版。
 
 ### 隐私
 
@@ -84,9 +83,8 @@ compare 为 2 个（两期对比免费，对比 3 期及以上需要 Pro），re
 
 ### 支持与条款
 
-问题反馈、购买咨询：deanymrq@gmail.com ·
+问题反馈：deanymrq@gmail.com ·
 [使用条款 EULA](https://dean20030514.github.io/xlsx-organizer-releases/eula.html) ·
-[退款政策](https://dean20030514.github.io/xlsx-organizer-releases/refund.html) ·
 [支持页](https://dean20030514.github.io/xlsx-organizer-releases/support.html)
 
 ---
@@ -148,14 +146,12 @@ a discrepancy remains.
 installer bootstraps it when missing. macOS / Linux can build from source
 (pure Python, cross-platform); contact us for a build.
 
-### Free vs Pro
+### Completely free
 
-Every pipeline runs on Free. Most pipelines cap each run at 20 files, mask /
-enrich at 5, compare at 2 (a two-period compare is free; comparing 3 or more
-periods needs Pro), and reconcile at 2 source files across both sides (file vs
-file is free; folder batches need Pro); Pro removes every cap. The license is an
-offline signed file — **no account, no activation server** — node-locked to the
-machine you register.
+From v0.10.0 on, xlsx-organizer is **completely free**: every feature, no
+file-count limit, no license key, account or activation, for personal and
+commercial use. It is freeware, **not open source**. v0.9.0 and earlier still
+cap the files per run — please update to the latest release.
 
 ### Privacy
 
@@ -167,9 +163,8 @@ confirm. See the
 
 ### Support & terms
 
-Questions and purchases: deanymrq@gmail.com ·
+Questions: deanymrq@gmail.com ·
 [EULA](https://dean20030514.github.io/xlsx-organizer-releases/eula.html) ·
-[Refund policy](https://dean20030514.github.io/xlsx-organizer-releases/refund.html) ·
 [Support](https://dean20030514.github.io/xlsx-organizer-releases/support.html)
 
 ---
@@ -177,10 +172,10 @@ Questions and purchases: deanymrq@gmail.com ·
 ## About this repository / 关于本仓库
 
 This repository hosts **release artifacts and the public website only** — the
-source repository is private. xlsx-organizer is proprietary commercial software:
-it is licensed, not sold. Bundled third-party dependencies (`pandas`,
-`openpyxl`, `click`, `pyyaml`, `cryptography`) keep their own open-source
+source repository is private. xlsx-organizer is free proprietary software
+(freeware, not open source). Bundled third-party dependencies (`pandas`,
+`numpy`, `openpyxl`, `xlrd`, `click`, `pyyaml`) keep their own open-source
 licenses.
 
-本仓库只托管**发行包与官网页面**，源码仓库为私有。xlsx-organizer 是商业软件，
-授权使用而非出售；捆绑的第三方依赖各自保留其开源许可证。
+本仓库只托管**发行包与官网页面**，源码仓库为私有。xlsx-organizer 是免费软件，
+但不开源；捆绑的第三方依赖各自保留其开源许可证。
