@@ -128,6 +128,7 @@
   .dl-card h3{font-size:18px;font-weight:700}
   .dl-card p{margin:10px 0 22px;color:var(--ink-soft);font-size:15px;flex:1}
   .checksum{margin-top:26px;font-size:13.5px;color:var(--ink-soft);font-family:var(--mono);text-align:center}
+  .dl-note{margin:10px auto 0;max-width:72ch;font-size:13.5px;color:var(--ink-soft);text-align:center}
 
   /* lead */
   .lead{background:var(--accent);color:#fff;text-align:center}
@@ -401,6 +402,7 @@
       </div>
     </div>
     <p class="checksum" data-i18n="dl.checksum">用 SHA256SUMS.txt 校验下载的文件。</p>
+    <p class="dl-note" data-i18n="dl.warning">暂未代码签名：若 Windows SmartScreen 提示，先用 PowerShell 的 Get-FileHash 核对文件的 SHA-256 与 SHA256SUMS.txt 一致，再点“更多信息”→“仍要运行”。若 360、火绒等杀毒软件拦截了哈希相符的文件，那是误报：可从隔离区恢复，并向该厂商或我们报告误报。</p>
   </div>
 </section>
 
@@ -461,7 +463,7 @@
         <a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer" data-i18n="footer.contact">联系</a>
       </nav>
     </div>
-    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.10.0</p>
+    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.11.0</p>
   </div>
 </footer>
 
@@ -549,6 +551,7 @@
     "dl.mirror_desc": "GitHub 下载慢或打不开时，从 Gitee 获取同一个安装包。",
     "dl.mirror_btn": "从 Gitee 下载",
     "dl.checksum": "用 SHA256SUMS.txt 校验下载的文件。",
+    "dl.warning": "暂未代码签名：若 Windows SmartScreen 提示，先用 PowerShell 的 Get-FileHash 核对文件的 SHA-256 与 SHA256SUMS.txt 一致，再点“更多信息”→“仍要运行”。若 360、火绒等杀毒软件拦截了哈希相符的文件，那是误报：可从隔离区恢复，并向该厂商或我们报告误报。",
     "lead.heading": "一起把它打磨得更好",
     "lead.sub": "遇到问题、想要新功能，或愿意分享你的使用场景？欢迎发邮件告诉我们。",
     "lead.cta": "联系我们",
@@ -652,6 +655,7 @@
     "dl.mirror_desc": "When GitHub is slow or blocked, get the same installer from Gitee.",
     "dl.mirror_btn": "Download from Gitee",
     "dl.checksum": "Verify downloads against SHA256SUMS.txt.",
+    "dl.warning": "Not code-signed yet: if Windows SmartScreen warns, first check the file's SHA-256 against SHA256SUMS.txt (PowerShell: Get-FileHash), then choose “More info” → “Run anyway”. If 360, Huorong or another antivirus flags a file whose hash matches, it is a false positive: restore it from quarantine and report it to the vendor or to us.",
     "lead.heading": "Help us make it better",
     "lead.sub": "Hit a problem, missing a feature, or want to share how you use it? Email us.",
     "lead.cta": "Get in touch",
