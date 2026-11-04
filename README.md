@@ -6,6 +6,8 @@
 [**⬇ 下载最新版 / Download latest**](https://github.com/Dean20030514/xlsx-organizer-releases/releases/latest)
  · [**官网 / Website**](https://dean20030514.github.io/xlsx-organizer-releases/)
  · [**更新记录 / All releases**](https://github.com/Dean20030514/xlsx-organizer-releases/releases)
+ · [**月结一页纸 / Month close**](MONTH-CLOSE.md)
+ · [**按任务查**](TASKS.zh.md) / [**Find a task**](TASKS.en.md)
 
 > 🇨🇳 **国内用户**：GitHub 下载慢或打不开时，请走
 > [**Gitee 镜像**](https://gitee.com/Dean20030514/xlsx-organizer-releases/releases)（国内直连，无需代理）。
@@ -24,6 +26,53 @@ xlsx-organizer 把「每个月都要手工重复一遍」的表格活儿变成�
 **数据完全不出本机。** 没有账号、没有云端、没有遥测；唯一的联网动作是你手动点击的
 「检查更新」。
 
+### 下载与安装
+
+1. 到 [Releases 页面](https://github.com/Dean20030514/xlsx-organizer-releases/releases/latest)
+   下载 `xlsx-organizer-setup-<版本>.exe`（安装包，推荐）或 `xlsx-organizer.exe`（免安装单文件）。
+   要在终端里用免安装版，把同一页的 `xlsx-organizer.com` 和 exe 放在同一个文件夹。
+2. **先核对文件**：算出的 SHA-256 要和同一发布页 `SHA256SUMS.txt` 里对应的那一行相同：
+
+   ```powershell
+   Get-FileHash .\xlsx-organizer-setup-*.exe -Algorithm SHA256
+   ```
+
+3. 安装包为**当前用户安装**，无需管理员权限；可选加入 PATH 与开始菜单快捷方式。
+
+> ⚠️ **Windows 提示与杀毒软件。** 当前版本**没有代码签名**，SmartScreen 可能提示「未知发布者」。
+> 哈希相符后，点「更多信息 → 仍要运行」。如果 360、火绒等杀毒软件拦截了哈希相符的文件，
+> 那是误报：可从隔离区恢复，并向该厂商或我们报告（deanymrq@gmail.com）。
+> 发布说明里附有每个文件的 VirusTotal 和微步云沙箱报告链接。
+
+**系统要求**：64 位 Windows。图形界面需要 WebView2 运行时——安装包会在缺失时自动引导安装。
+macOS / Linux 可从源码构建（纯 Python，跨平台），请联系我们获取。
+
+### 三步拿到第一个结果
+
+都用内置的样本数据，不碰你自己的文件。
+
+1. 打开 xlsx-organizer（开始菜单，或双击 `xlsx-organizer.exe`）。
+2. 在主页点**试用示例**。
+3. 它会对内置的杂乱数据运行一次真实的清洗；结果里会显示放着清洗后副本的输出文件夹。
+
+喜欢用终端的话（PowerShell 或 cmd），`demo` 会新建一个文件夹，写入 13 个演示场景，
+每个功能一个，外加月结作业；文件夹里的 `START-HERE.txt` 列出每一条命令：
+
+```powershell
+xlsx-organizer demo
+cd xlsx-organizer-demo
+xlsx-organizer --config clean.config.yaml clean --dry-run
+xlsx-organizer --config clean.config.yaml clean
+```
+
+### 接下来
+
+- **做月结**：[MONTH-CLOSE.md](MONTH-CLOSE.md)，一页讲完试跑、换成自己的数据、下个月怎么做。
+  图形界面里在「内置作业」→「月结对账」。
+- **想做某一件事**：[TASKS.zh.md](TASKS.zh.md) 按任务列出在界面里点哪儿、命令怎么写。
+- **查配置字段**：`xlsx-organizer config init` 会写出一份带中英注释的配置文件；
+  `xlsx-organizer headers <文件>` 列出文件的工作表和列名。
+
 ### 十二条流水线
 
 | 管道 | 做什么 |
@@ -41,8 +90,8 @@ xlsx-organizer 把「每个月都要手工重复一遍」的表格活儿变成�
 | `enrich` | 按同名主键补充参照表的列——声明式的 VLOOKUP |
 | `reconcile` | 两侧确定性对账（如台账 vs 银行流水），未匹配与存疑行单独列出 |
 
-十二条流水线共用一套配置与日志，可以串成**多步作业**（配方 / 工作流），内置一个
-**月结作业**模板：清洗台账 → 与银行流水对账 → 校验 → 对比上期 → 仅在有差异时导出异常表。
+十二条流水线共用一套配置与日志，可以串成**工作流**，内置一个**月结作业**模板：
+清洗台账 → 与银行流水对账 → 校验 → 对比上期 → 仅在有差异时导出异常表。
 
 ### 图形界面
 
@@ -50,24 +99,6 @@ xlsx-organizer 把「每个月都要手工重复一遍」的表格活儿变成�
 原生文件夹 / 文件选择器、无需写 YAML 的规则编辑器、能从真实文件里采样列名的
 **读取表头**按钮、带回滚 / 重放的运行历史，以及中文 / English 一键切换。
 移动文件的操作一律「预览 → 确认 → 执行」三步闸门。
-
-### 下载与安装
-
-1. 到 [Releases 页面](https://github.com/Dean20030514/xlsx-organizer-releases/releases/latest)
-   下载 `xlsx-organizer-setup-<版本>.exe`（安装包，推荐）或 `xlsx-organizer.exe`（免安装单文件）。
-2. **校验完整性**（可选但建议）——同一版本的 `SHA256SUMS.txt` 里有官方哈希：
-
-   ```powershell
-   Get-FileHash xlsx-organizer-setup-<版本>.exe -Algorithm SHA256
-   ```
-
-3. 安装包为**当前用户安装**，无需管理员权限；可选加入 PATH 与开始菜单快捷方式。
-
-> ⚠️ 当前版本**尚未购买代码签名证书**，Windows SmartScreen 可能提示「未知发布者」。
-> 请点击「更多信息 → 仍要运行」，并用上面的 SHA256 核对文件确属官方发布。
-
-**系统要求**：64 位 Windows。图形界面需要 WebView2 运行时——安装包会在缺失时自动引导安装。
-macOS / Linux 可从源码构建（纯 Python，跨平台），请联系我们获取。
 
 ### 完全免费
 
@@ -101,6 +132,62 @@ Double-click the exe for a GUI; pass arguments and it is a CLI.
 **Your data never leaves your machine.** No account, no cloud, no telemetry —
 the only network call is the update check you trigger yourself.
 
+### Download
+
+1. Grab `xlsx-organizer-setup-<version>.exe` (installer, recommended) or
+   `xlsx-organizer.exe` (single-file, no install) from the
+   [latest release](https://github.com/Dean20030514/xlsx-organizer-releases/releases/latest).
+   To use the single file from a terminal, keep `xlsx-organizer.com` from the same
+   page in the same folder.
+2. **Check the file first**: its SHA-256 must equal the matching line of
+   `SHA256SUMS.txt` from the same release:
+
+   ```powershell
+   Get-FileHash .\xlsx-organizer-setup-*.exe -Algorithm SHA256
+   ```
+
+3. The installer is **per-user** — no admin rights needed. PATH entry and
+   Start-menu shortcut are optional tasks.
+
+> ⚠️ **Windows warnings and antivirus.** Builds are **not code-signed**, so
+> SmartScreen may warn about an unknown publisher. Once the hash matches, choose
+> *More info → Run anyway*. If 360, Huorong or another antivirus flags a file whose
+> hash matches, it is a false positive: restore it from quarantine and report it to
+> the vendor or to us (deanymrq@gmail.com). The release notes link each file's
+> VirusTotal and ThreatBook reports.
+
+**Requirements:** 64-bit Windows. The GUI needs the WebView2 runtime — the
+installer bootstraps it when missing. macOS / Linux can build from source
+(pure Python, cross-platform); contact us for a build.
+
+### A first result in three steps
+
+These use built-in sample data and never touch your own files.
+
+1. Open xlsx-organizer (Start menu, or double-click `xlsx-organizer.exe`).
+2. On the home screen, click **Try a sample**.
+3. It runs a real clean over built-in messy data; the result shows the output folder
+   holding the tidied copies.
+
+In a terminal (PowerShell or cmd), `demo` writes 13 scenarios into a new folder, one
+per feature plus the month-close job; its `START-HERE.txt` lists every command:
+
+```powershell
+xlsx-organizer demo
+cd xlsx-organizer-demo
+xlsx-organizer --config clean.config.yaml clean --dry-run
+xlsx-organizer --config clean.config.yaml clean
+```
+
+### Next
+
+- **Close the books**: [MONTH-CLOSE.md](MONTH-CLOSE.md) is one page: try it, use your
+  own data, do next month. In the GUI: **Jobs** → **Month close**.
+- **Do one particular thing**: [TASKS.en.md](TASKS.en.md) lists, by task, where to
+  click and what to type.
+- **Look up a config field**: `xlsx-organizer config init` writes a commented config
+  file; `xlsx-organizer headers <file>` lists a file's sheets and columns.
+
 ### Twelve pipelines
 
 | Pipeline | What it does |
@@ -119,32 +206,17 @@ the only network call is the update check you trigger yourself.
 | `reconcile` | Deterministic two-sided matching (ledger vs bank statement); unmatched and ambiguous rows listed for follow-up |
 
 All twelve share one config and logging mechanism and can be chained into
-**multi-step jobs** (recipes / workflows). A built-in **month-close** template
-ships with the app: clean the ledger → reconcile it against the bank statement →
-validate → compare against last period → export an exceptions summary only when
-a discrepancy remains.
+**workflows**. A built-in **month-close** template ships with the app: clean the
+ledger → reconcile it against the bank statement → validate → compare against last
+period → export an exceptions summary only when a discrepancy remains.
 
-### Download
+### Web GUI
 
-1. Grab `xlsx-organizer-setup-<version>.exe` (installer, recommended) or
-   `xlsx-organizer.exe` (single-file, no install) from the
-   [latest release](https://github.com/Dean20030514/xlsx-organizer-releases/releases/latest).
-2. **Verify the download** against `SHA256SUMS.txt` from the same release:
-
-   ```powershell
-   Get-FileHash xlsx-organizer-setup-<version>.exe -Algorithm SHA256
-   ```
-
-3. The installer is **per-user** — no admin rights needed. PATH entry and
-   Start-menu shortcut are optional tasks.
-
-> ⚠️ Builds are currently **unsigned** (no code-signing certificate yet), so
-> Windows SmartScreen may warn about an unknown publisher. Choose
-> *More info → Run anyway*, and use the SHA256 above to confirm authenticity.
-
-**Requirements:** 64-bit Windows. The GUI needs the WebView2 runtime — the
-installer bootstraps it when missing. macOS / Linux can build from source
-(pure Python, cross-platform); contact us for a build.
+Double-click the exe for a local web GUI in a native window: a card home screen, one
+run tab per pipeline, native folder / file pickers, no-code rule editors, a
+**Read headers** button that samples column names from your real files, run history
+with rollback / replay, and a 中文 / English toggle. File moves keep a
+preview → confirm → execute gate.
 
 ### Completely free
 
