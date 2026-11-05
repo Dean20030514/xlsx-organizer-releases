@@ -37,7 +37,7 @@ xlsx-organizer 把「每个月都要手工重复一遍」的表格活儿变成�
    Get-FileHash .\xlsx-organizer-setup-*.exe -Algorithm SHA256
    ```
 
-3. 安装包为**当前用户安装**，无需管理员权限；可选加入 PATH 与开始菜单快捷方式。
+3. 安装包为**当前用户安装**，无需管理员权限；可选加入 PATH 与桌面快捷方式，开始菜单快捷方式总会创建。
 
 > ⚠️ **Windows 提示与杀毒软件。** 当前版本**没有代码签名**，SmartScreen 可能提示「未知发布者」。
 > 哈希相符后，点「更多信息 → 仍要运行」。如果 360、火绒等杀毒软件拦截了哈希相符的文件，
@@ -97,7 +97,7 @@ xlsx-organizer --config clean.config.yaml clean
 
 双击 exe 即可打开本地 Web 图形界面（原生窗口）：卡片式首页、每条流水线一个运行页、
 原生文件夹 / 文件选择器、无需写 YAML 的规则编辑器、能从真实文件里采样列名的
-**读取表头**按钮、带回滚 / 重放的运行历史，以及中文 / English 一键切换。
+**读取表头**按钮、带回滚 / 回放的运行历史，以及中文 / English 一键切换。
 移动文件的操作一律「预览 → 确认 → 执行」三步闸门。
 
 ### 完全免费
@@ -146,8 +146,8 @@ the only network call is the update check you trigger yourself.
    Get-FileHash .\xlsx-organizer-setup-*.exe -Algorithm SHA256
    ```
 
-3. The installer is **per-user** — no admin rights needed. PATH entry and
-   Start-menu shortcut are optional tasks.
+3. The installer is **per-user** — no admin rights needed. A PATH entry and a
+   desktop shortcut are optional tasks; the Start-menu shortcut is always created.
 
 > ⚠️ **Windows warnings and antivirus.** Builds are **not code-signed**, so
 > SmartScreen may warn about an unknown publisher. Once the hash matches, choose
