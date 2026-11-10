@@ -10,15 +10,15 @@
 
 | 我想… | 界面（在哪点） | 命令 | 详见 |
 |---|---|---|---|
-| 用示例文件先试一遍 | 无，只有命令行 | `xlsx-organizer demo` | `xlsx-organizer demo --help` |
+| 用示例文件先试一遍 | 主页 → 试用示例 | `xlsx-organizer demo` | `xlsx-organizer demo --help` |
 | 写一份配置文件起步 | 无，界面用表单填写 | `xlsx-organizer config init` | `xlsx-organizer config init --help` |
-| 查文件的工作表和列名 | 运行 → 清洗 → 读取表头 | `xlsx-organizer headers 导出/订单.xlsx` | `xlsx-organizer headers --help` |
+| 查文件的工作表和列名 | 运行 → 清洗 → 输入检查 → 检查输入 | `xlsx-organizer headers 导出/订单.xlsx` | `xlsx-organizer headers --help` |
 | 清洗工作簿内部的数据 | 运行 → 清洗 → 运行清洗 | `xlsx-organizer clean --input 导出 --output 清洗后` | `clean` 小节；`xlsx-organizer clean --help` |
-| 把文件分类、改名、去重（默认按文件名开头的英文字母分类，其余进 `_unmatched`） | 运行 → 文件整理 → 预览计划 → 执行 | 预览 `xlsx-organizer files --input 收件箱 --output 已整理`，执行 `xlsx-organizer files --input 收件箱 --output 已整理 --apply` | `files` 小节；`xlsx-organizer files --help` |
+| 把文件分类、去重，打开 `rename.enabled` 时还会改名（默认按文件名开头的英文字母分类，其余进 `_unmatched`） | 运行 → 文件整理 → 预览计划 → 执行 | 预览 `xlsx-organizer files --input 收件箱 --output 已整理`，执行 `xlsx-organizer files --input 收件箱 --output 已整理 --apply` | `files` 小节；`xlsx-organizer files --help` |
 | 只挑出内容重复的文件 | 主页 → 重复文件检查 | 小节里设 `strategy: none`，再运行 `xlsx-organizer -c config.yaml files --apply` | `files` 小节 |
 | 把多个文件合并成一个 | 运行 → 合并 → 执行合并 | `xlsx-organizer merge --input 导出 --output 合并.xlsx` | `merge` 小节；`xlsx-organizer merge --help` |
 | 合并时读每个文件的全部工作表 | 运行 → 合并，工作表选「全部工作表（all）」→ 执行合并 | `xlsx-organizer merge --input 导出 --output 合并.xlsx --sheets all` | `merge` 小节 |
-| 按键列连接多个文件 | 运行 → 合并，合并模式选「按键列连接（join）」→ 执行合并 | `xlsx-organizer merge --input 导出 --output 连接.xlsx --join-on 订单号` | `merge` 小节 |
+| 按键列连接多个文件 | 运行 → 合并，合并模式选「按键列连接（join）」，填「连接键列」→ 执行合并 | `xlsx-organizer merge --input 导出 --output 连接.xlsx --join-on 订单号` | `merge` 小节 |
 | 按规则校验数据 | 运行 → 校验 → 运行校验 | `xlsx-organizer -c config.yaml validate --strict` | `validate` 小节；`xlsx-organizer validate --help` |
 | 把校验问题导出成待办表 | 运行 → 校验 → 运行校验 → 导出待办 | `xlsx-organizer -c config.yaml validate --todo 待办.xlsx` | `xlsx-organizer validate --help` |
 | 把明细汇总成报表 | 运行 → 汇总 → 运行汇总 | `xlsx-organizer -c config.yaml report` | `report` 小节；`xlsx-organizer report --help` |

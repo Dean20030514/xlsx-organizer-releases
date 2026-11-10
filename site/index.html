@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232563eb'/%3E%3Cg fill='%23fff'%3E%3Crect x='5' y='6' width='14' height='2.2' rx='1'/%3E%3Crect x='5' y='10.9' width='14' height='2.2' rx='1'/%3E%3Crect x='5' y='15.8' width='9' height='2.2' rx='1'/%3E%3C/g%3E%3C/svg%3E">
 <style>
   :root{
-    /* token layer ported from frontend/src/styles.css (light fintech design system) */
+    /* token layer (light fintech design system) */
     --accent:#2563eb; --accent-hover:#1d4ed8; --accent-soft:#e8f0fe;
     --ink:#1a2333; --ink-soft:#5b6472;
     --panel:#ffffff; --surface:#f4f6fb; --line:#e3e8f0; --line-strong:#b9c4d6;
@@ -330,7 +330,7 @@
       </div>
       <div class="safe-cell">
         <h3 data-i18n="safe.compat_title">兼容性扫描</h3>
-        <p data-i18n="safe.compat_desc">含公式 / 图表 / 合并单元格 / 宏的文件默认跳过，并说明原因。</p>
+        <p data-i18n="safe.compat_desc">含图表 / 数据行合并单元格 / 保护 / 宏（或公式没有保存结果）的文件默认跳过，并说明原因。</p>
       </div>
       <div class="safe-cell">
         <h3 data-i18n="safe.report_title">可审计报告</h3>
@@ -464,7 +464,7 @@
         <a href="mailto:deanymrq@gmail.com?subject=xlsx-organizer" data-i18n="footer.contact">联系</a>
       </nav>
     </div>
-    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.11.0</p>
+    <p class="foot-meta"><span data-i18n="footer.copyright">© 2026 xlsx-organizer</span> · v0.12.0</p>
   </div>
 </footer>
 
@@ -521,7 +521,7 @@
     "safe.dedup_title": "去重只移动",
     "safe.dedup_desc": "重复文件移动到 duplicates/，永不删除；命名冲突自动改唯一名。",
     "safe.compat_title": "兼容性扫描",
-    "safe.compat_desc": "含公式 / 图表 / 合并单元格 / 宏的文件默认跳过，并说明原因。",
+    "safe.compat_desc": "含图表 / 数据行合并单元格 / 保护 / 宏（或公式没有保存结果）的文件默认跳过，并说明原因。",
     "safe.report_title": "可审计报告",
     "safe.report_desc": "每次运行产出 JSON / 文本报告，含处理与跳过的文件。",
     "free.heading": "完全免费",
@@ -626,7 +626,7 @@
     "safe.dedup_title": "Dedup only moves",
     "safe.dedup_desc": "Duplicates move to duplicates/, never deleted; name clashes resolve to a unique name.",
     "safe.compat_title": "Compatibility scan",
-    "safe.compat_desc": "Files with formulas / charts / merged cells / macros are skipped by default, with a reason.",
+    "safe.compat_desc": "Files with charts / merged data rows / protection / macros (or formulas with no saved result) are skipped by default, with a reason.",
     "safe.report_title": "Auditable reports",
     "safe.report_desc": "Every run produces a JSON / text report covering processed and skipped files.",
     "free.heading": "Completely free",

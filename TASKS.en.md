@@ -10,15 +10,15 @@ Look up what you want to do: where to click in the GUI, what to type on the comm
 
 | I want to… | GUI (where to click) | Command | Read more |
 |---|---|---|---|
-| Try it on sample files first | None, command line only | `xlsx-organizer demo` | `xlsx-organizer demo --help` |
+| Try it on sample files first | Home → Try a sample | `xlsx-organizer demo` | `xlsx-organizer demo --help` |
 | Start from a config file | None, the GUI uses forms | `xlsx-organizer config init` | `xlsx-organizer config init --help` |
-| List a file's sheets and columns | Run → Clean → Read headers | `xlsx-organizer headers exports/orders.xlsx` | `xlsx-organizer headers --help` |
+| List a file's sheets and columns | Run → Clean → Input check → Check inputs | `xlsx-organizer headers exports/orders.xlsx` | `xlsx-organizer headers --help` |
 | Tidy the data inside workbooks | Run → Clean → Run clean | `xlsx-organizer clean --input exports --output cleaned` | `clean` section; `xlsx-organizer clean --help` |
-| Classify, rename and de-duplicate files (by default by the letters a file name starts with, the rest go to `_unmatched`) | Run → Organize files → Preview plan → Execute | Preview `xlsx-organizer files --input inbox --output organized`, run `xlsx-organizer files --input inbox --output organized --apply` | `files` section; `xlsx-organizer files --help` |
+| Classify and de-duplicate files, and rename them when `rename.enabled` is on (by default by the letters a file name starts with, the rest go to `_unmatched`) | Run → Organize files → Preview plan → Execute | Preview `xlsx-organizer files --input inbox --output organized`, run `xlsx-organizer files --input inbox --output organized --apply` | `files` section; `xlsx-organizer files --help` |
 | Only pick out files with identical content | Home → Duplicate check | Set `strategy: none` in the section, then `xlsx-organizer -c config.yaml files --apply` | `files` section |
 | Combine many files into one | Run → Merge → Run merge | `xlsx-organizer merge --input exports --output merged.xlsx` | `merge` section; `xlsx-organizer merge --help` |
 | Merge every sheet of each file | Run → Merge, set the sheets to "All sheets (all)" → Run merge | `xlsx-organizer merge --input exports --output merged.xlsx --sheets all` | `merge` section |
-| Join files on key columns | Run → Merge, set the merge mode to "Join on key columns (join)" → Run merge | `xlsx-organizer merge --input exports --output joined.xlsx --join-on order_id` | `merge` section |
+| Join files on key columns | Run → Merge, set the merge mode to "Join on key columns (join)", fill "Join key column(s)" → Run merge | `xlsx-organizer merge --input exports --output joined.xlsx --join-on order_id` | `merge` section |
 | Check data against rules | Run → Validate → Run validate | `xlsx-organizer -c config.yaml validate --strict` | `validate` section; `xlsx-organizer validate --help` |
 | Export validation issues as a to-do list | Run → Validate → Run validate → Export to-do | `xlsx-organizer -c config.yaml validate --todo todo.xlsx` | `xlsx-organizer validate --help` |
 | Summarize detail rows into a report | Run → Report → Run report | `xlsx-organizer -c config.yaml report` | `report` section; `xlsx-organizer report --help` |

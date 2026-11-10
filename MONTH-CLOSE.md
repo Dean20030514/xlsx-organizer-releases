@@ -13,7 +13,7 @@ xlsx-organizer workflow install month-close --sample --name try-it
 xlsx-organizer workflow run try-it --apply
 ```
 
-命令结尾会列出写出的文件。`reconcile-result.xlsx` 有五张表：`summary`、`matched`、
+每一步的日志都写明它写出的文件，如 `month-close/output/<期间>/reconcile/run-<时间>/reconcile-result.xlsx`。`reconcile-result.xlsx` 有五张表：`summary`、`matched`、
 `left_unmatched`、`right_unmatched`、`ambiguous`；示例数据故意留了差异，所以还会多一份
 `exceptions-summary.xlsx`。不带 `--apply` 就是预览，什么都不写。
 
@@ -53,7 +53,8 @@ right:
 ```
 
 只有一列金额加一列方向时，写 `amount: { column: 金额, direction_column: 收支, in_labels: [收入], out_labels: [支出] }`。
-台账和流水方向相反时，再加 `flip_sign: true`。无法判断方向的行不会被猜测，只会列在未匹配表里。
+台账和流水方向相反时，在 `amount` 的大括号里再加 `flip_sign: true`。无法判断方向的行不会被猜测，只会列在未匹配表里。
+支付宝的「不计收支」、微信的「/」这类方向，可以在同一个 `amount` 大括号里再加 `skip_labels: [不计收支]`（只用于带方向列的写法）：这些行仍列在未匹配表里，但标为按配置跳过，不参与配对，也不再算作无法判断方向的行。
 
 ## 跑一次月结
 
@@ -76,6 +77,7 @@ xlsx-organizer workflow run month-close --param period=2026-09 --apply
 ```
 
 期间要写成 `YYYY-MM`：`2026-7` 这样的值会被拒绝，什么都不写，所以不会多出一个 7 月的文件夹。
+这条检查写在作业里，更早装好的作业没有它；用 `workflow install month-close --force` 重装才有，这会覆盖你改过的内容。
 
 图形界面里同样可用：打开“内置作业”，选“月结对账”，页面上有期间输入框，也会显示上次运行的结果。
 
@@ -88,7 +90,8 @@ xlsx-organizer workflow install month-close --sample --name try-it
 xlsx-organizer workflow run try-it --apply
 ```
 
-The command ends by listing what it wrote. `reconcile-result.xlsx` has five sheets:
+Each step's log line names the files it wrote, such as
+`month-close/output/<period>/reconcile/run-<time>/reconcile-result.xlsx`. `reconcile-result.xlsx` has five sheets:
 `summary`, `matched`, `left_unmatched`, `right_unmatched` and `ambiguous`; the sample
 holds differences on purpose, so `exceptions-summary.xlsx` appears too. Without
 `--apply` it is a preview that writes nothing.
@@ -131,8 +134,13 @@ right:
 
 For one amount column plus a direction column, write
 `amount: { column: Amount, direction_column: Type, in_labels: [CR], out_labels: [DR] }`.
-If the two sides count the same money in opposite directions, add `flip_sign: true`.
+If the two sides count the same money in opposite directions, add `flip_sign: true`
+inside the `amount` braces.
 A row whose direction cannot be told is never guessed: it is listed as unmatched.
+Directions that a payment export marks as not counted (Alipay's 不计收支, WeChat's `/`)
+go in `skip_labels: [不计收支]`, inside the same `amount` braces (with a direction column
+only): those rows stay on the unmatched sheet, marked as
+skipped by your configuration, never pair, and no longer count as rows of unknown direction.
 
 ## Run a close
 
@@ -158,7 +166,9 @@ xlsx-organizer workflow run month-close --param period=2026-09 --apply
 ```
 
 The period is written `YYYY-MM`: a value such as `2026-7` is refused and nothing is
-written, so no second folder for July appears.
+written, so no second folder for July appears. The check lives in the job, so one
+installed earlier lacks it; `workflow install month-close --force` adds it and replaces
+your edits to the job.
 
 The Web GUI does the same: open Jobs, choose Month close; the page has a period field
 and shows what the last run did.
